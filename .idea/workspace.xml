@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d8b00e-e2c0-489d-b97b-1fd35c65db68" name="Changes" comment="처음으로 되돌림..">
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/oinkvalleyfront.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oinkvalley-frontend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/timesmoker/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/timesmoker/page.tsx" afterDir="false" />
+    <list default="true" id="78d8b00e-e2c0-489d-b97b-1fd35c65db68" name="Changes" comment="dockedrfile추가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -41,7 +38,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,8 +78,8 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "true",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/home/timesmoker/workspace/banner-snooper",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,7 +121,7 @@
       <workItem from="1742803332321" duration="564000" />
       <workItem from="1744162408783" duration="4968000" />
       <workItem from="1744252108610" duration="192000" />
-      <workItem from="1744252308284" duration="1756000" />
+      <workItem from="1744252308284" duration="7422000" />
     </task>
     <task id="LOCAL-00001" summary="커스텀 서버 설정 포트 -443">
       <option name="closed" value="true" />
@@ -182,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736870895173</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="dockedrfile추가">
+      <option name="closed" value="true" />
+      <created>1744265431478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744265431478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +201,7 @@
     <MESSAGE value="eslint타입 업데이" />
     <MESSAGE value="nextconfig수정" />
     <MESSAGE value="처음으로 되돌림.." />
-    <option name="LAST_COMMIT_MESSAGE" value="처음으로 되돌림.." />
+    <MESSAGE value="dockedrfile추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="dockedrfile추가" />
   </component>
 </project>

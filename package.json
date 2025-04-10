@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "neㅡxt start"
+    "start": "next start"
   },
   "dependencies": {
     "@react-three/drei": "^9.121.4",
