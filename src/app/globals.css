@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-left: #ffcc00;  /* 왼쪽 배경 색 (예: 노란색) */
+  --background-right: #00ccff;  /* 오른쪽 배경 색 (예: 파란색) */
+  --background: #ffffff; /* 밝은 배경 색 */
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(150deg, #ffcc00 50%, #00ccff 50%);
+}
+
