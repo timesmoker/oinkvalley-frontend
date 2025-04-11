@@ -1,4 +1,7 @@
-/.idea
+.idea/*
+!.idea/vcs.xml
+!.idea/inspectionProfiles
+
 
 # dependencies
 /node_modules/
