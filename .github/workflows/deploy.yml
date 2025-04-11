@@ -52,3 +52,5 @@ jobs:
             docker stop oinkvalley-frontend || true
             docker rm oinkvalley-frontend || true
             docker run -d --name oinkvalley-frontend -p 80:80 ghcr.io/${{ github.repository }}:${{ env.TAG }}
+
+            rm -f ~/.docker/config.json
