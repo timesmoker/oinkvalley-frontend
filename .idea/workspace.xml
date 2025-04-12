@@ -18,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +38,7 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-infra",
     "node.js.selected.package.tslint": "(autodetect)",
     "ts.external.directory.path": "/snap/webstorm/451/plugins/javascript-plugin/jsLanguageServicesImpl/external"
