@@ -19,6 +19,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: npm build
+        run: echo "npm run build"
+
       - name: Set Docker tags
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
