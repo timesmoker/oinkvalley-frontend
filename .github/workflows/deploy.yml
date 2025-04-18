@@ -22,9 +22,9 @@ jobs:
       - name: Set Docker tags
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-            echo "TAGS='deploy latest'" >> $GITHUB_ENV
+            echo "TAGS=deploy latest" >> $GITHUB_ENV
           else
-            echo "TAGS='latest'" >> $GITHUB_ENV
+            echo "TAGS=latest" >> $GITHUB_ENV
           fi
 
       - name: Set up Docker Buildx
