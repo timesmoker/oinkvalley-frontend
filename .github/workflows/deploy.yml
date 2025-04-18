@@ -19,8 +19,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: npm build
-        run: echo "npm run build"
+      - name: Install deps
+        run: npm ci --omit=dev
+
+      - name: Build
+        run: npm run build
 
       - name: Set Docker tags
         run: |
