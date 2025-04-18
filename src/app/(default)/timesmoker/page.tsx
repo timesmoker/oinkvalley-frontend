@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-
-
 export default function timesmoker() {
     return (
         <div className = "pt-32">
