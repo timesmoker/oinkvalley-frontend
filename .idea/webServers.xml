@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="8116a05d-0e38-44c5-ade6-baea7961f295" name="oinkvalley-oinkberry">
+        <fileTransfer rootFolder="/home/timesmoker" accessType="SFTP" host="oinkberry.local" port="22" sshConfigId="09299986-aebf-4d39-a0b2-b2385ffcb1eb" sshConfig="timesmoker@oinkberry.local:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
