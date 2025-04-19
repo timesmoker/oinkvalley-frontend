@@ -1,5 +1,4 @@
-# 1단계: 빌드 스테이지
-FROM --platform=linux/arm64 node:18-alpine AS builder
+FROM node:18-alpine
 
 WORKDIR /app
 
