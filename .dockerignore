@@ -1,12 +1,10 @@
 # 기본 불필요한 것들
-node_modules/
 .git/
 .vscode/
 .idea/
 .DS_Store
 
 # 빌드 출력
-.next/
 out/
 
 # 환경 설정 파일
