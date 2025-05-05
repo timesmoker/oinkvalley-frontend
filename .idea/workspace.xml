@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactor : board-&gt;boards로 통일">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/board/boardConfigs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/boardConfigs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/board/dummy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/dummy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/board/mock-posts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/mock-posts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/board/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/posts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/boards/dummy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/boards/mock-posts.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/boards/posts.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/boards.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -84,6 +86,11 @@
     "settings.editor.selected.configurable": "vcs.Git",
     "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -165,7 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
-      <workItem from="1746450972725" duration="4119000" />
+      <workItem from="1746450972725" duration="7122000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -247,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746455943603</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor : board-&gt;boards로 통일">
+      <option name="closed" value="true" />
+      <created>1746456091256</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746456091256</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

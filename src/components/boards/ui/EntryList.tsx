@@ -4,7 +4,7 @@
 import {useEffect, useState} from "react";
 import Link from "next/link";
 import { FileText } from "lucide-react";
-import {Entry,BoardProps} from "@/types/board";
+import {Entry,BoardProps} from "@/types/boards";
 import {PageResponse} from "@/types/pagination"
 
 export default function EntryList({ boardType }: BoardProps) {
