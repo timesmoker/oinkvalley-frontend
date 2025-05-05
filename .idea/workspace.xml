@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="chore : CR_PAT로 변경">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +68,8 @@
     "git-widget-placeholder": "develop",
     "javascript.nodejs.core.library.configured.version": "20.19.0",
     "javascript.nodejs.core.library.typings.version": "20.17.30",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,10 +97,25 @@
       <recent name="$PROJECT_DIR$/src/data/shared" />
     </key>
   </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
       </set>
     </attachedChunks>
   </component>
@@ -144,6 +160,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
+      <workItem from="1746450972725" duration="1039000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -193,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746447517294</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="chore : CR_PAT로 변경">
+      <option name="closed" value="true" />
+      <created>1746447895315</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746447895315</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +234,7 @@
     <MESSAGE value="npm ci를 안하면 npm build가 안되겠지요? 그리고 git action 버튼 누르면 해볼수 있는데 그냥 main에 병합하면 안되겠지요?" />
     <MESSAGE value="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다" />
     <MESSAGE value="feat : 게시판 요약 불러오기 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 게시판 요약 불러오기 기능 추가" />
+    <MESSAGE value="chore : CR_PAT로 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore : CR_PAT로 변경" />
   </component>
 </project>

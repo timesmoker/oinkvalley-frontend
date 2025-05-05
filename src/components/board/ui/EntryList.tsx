@@ -16,7 +16,7 @@ export default function EntryList({ boardType }: BoardProps) {
     const pageSize = 20;
 
     useEffect(() => {
-        fetch(`/api/${boardType}/posts?page=${page}&size=${pageSize}`)
+        fetch(`/api/boards/${boardType}/posts?page=${page}&size=${pageSize}`)
             .then((res) => res.json())
             .then((data: PageResponse<Entry>) => {
                 setEntries(data.content);
