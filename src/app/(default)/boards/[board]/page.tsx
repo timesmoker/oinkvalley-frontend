@@ -1,5 +1,5 @@
 // src/app/board/[board]/page.tsx
-import { boardConfigs } from "@/data/board/boardConfigs";
+import { boardConfigs } from "@/data/boards/boardConfigs";
 import { notFound } from "next/navigation";
 import EntryList from "@/components/boards/ui/EntryList";
 

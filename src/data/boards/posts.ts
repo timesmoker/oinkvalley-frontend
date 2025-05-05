@@ -1,4 +1,4 @@
-import { dummyPosts } from '@/data/board/dummy'
+import { dummyPosts } from '@/data/boards/dummy'
 
 // 페이지네이션으로 게시글 불러오기
 export function getPosts(page: number, pageSize = 20, preloadPages = 3) {
