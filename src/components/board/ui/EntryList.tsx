@@ -4,21 +4,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FileText } from "lucide-react";
+import {Entry,BoardProps} from "@/types/board";
+import {PageResponse} from "@/types/pagination"
 
-type Entry = { id: string; title: string };
-
-type Props = {
-    entries: Entry[];
-    totalCount: number;
-    baseHref: string;
-};
-
-export default function EntryList({ entries, totalCount, baseHref }: Props) {
-    const pageSize = 20;
+export default function EntryList({ boardType }: BoardProps) {
+    const [entries, setEntries] = useState<Entry[]>([]);
     const [page, setPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(1);
 
-    const totalPages = Math.ceil(totalCount / pageSize);
-    const currentEntries = entries.slice(page * pageSize, (page + 1) * pageSize);
+    const pageSize = 20;
+
+    useEffect(() => {
+        fetch(`/api/${boardType}/posts?page=${page}&size=${pageSize}`)
+            .then((res) => res.json())
+            .then((data: PageResponse) => {
+                setEntries(data.content);
+                setTotalPages(data.totalPages);
+            });
+    }, [page, boardType]);
 
     return (
         <div className="border rounded-md overflow-hidden">

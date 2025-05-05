@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +23,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -37,12 +35,12 @@
     &quot;assignee&quot;: &quot;timesmoker&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:timesmoker/oinkvalley-frontend.git&quot;,
-    &quot;accountId&quot;: &quot;b0421705-4fe2-439a-9d74-dce1e1f21ee0&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:timesmoker/oinkvalley-frontend.git",
+    "accountId": "c539ea4a-a82f-4522-bbbc-49800fc9db3c"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -50,7 +48,7 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2vtMEPUGTCLunHdd6MFOuxOH5f3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -66,16 +64,16 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "20.19.0",
-    "javascript.nodejs.core.library.typings.version": "20.17.30",
-    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board",
+    "git-widget-placeholder": "develop",
+    "javascript.nodejs.core.library.configured.version": "18.20.8",
+    "javascript.nodejs.core.library.typings.version": "18.19.87",
+    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node",
-    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v18.20.8/bin/npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
     "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -99,7 +97,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
       </set>
     </attachedChunks>
   </component>
@@ -144,6 +142,10 @@
       <option name="presentableId" value="Default" />
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
+      <workItem from="1745056484251" duration="4360000" />
+      <workItem from="1745579585626" duration="1321000" />
+      <workItem from="1745582147631" duration="3527000" />
+      <workItem from="1745752028534" duration="2269000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
