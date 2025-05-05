@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/board/[board]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/board/[board]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/board/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/board/ui/EntryList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/board/boardConfigs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/board/boardConfigs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="temp" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +66,7 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "temp",
+    "git-widget-placeholder": "develop",
     "javascript.nodejs.core.library.configured.version": "20.19.0",
     "javascript.nodejs.core.library.typings.version": "20.17.30",
     "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board",
@@ -188,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745028316002</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat : 게시판 요약 불러오기 기능 추가">
+      <option name="closed" value="true" />
+      <created>1746447517294</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746447517294</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +208,7 @@
     <MESSAGE value="오타 수정" />
     <MESSAGE value="npm ci를 안하면 npm build가 안되겠지요? 그리고 git action 버튼 누르면 해볼수 있는데 그냥 main에 병합하면 안되겠지요?" />
     <MESSAGE value="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다" />
-    <option name="LAST_COMMIT_MESSAGE" value="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다" />
+    <MESSAGE value="feat : 게시판 요약 불러오기 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 게시판 요약 불러오기 기능 추가" />
   </component>
 </project>
