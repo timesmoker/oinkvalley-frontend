@@ -1,7 +1,7 @@
 // src/app/board/[board]/page.tsx
 import { boardConfigs } from "@/data/board/boardConfigs";
 import { notFound } from "next/navigation";
-import EntryList from "@/components/board/ui/EntryList";
+import EntryList from "@/components/boards/ui/EntryList";
 
 export default function BoardPage({ params }: { params: { board: string } }) {
     const config = boardConfigs[params.board as keyof typeof boardConfigs];
