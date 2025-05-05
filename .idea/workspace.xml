@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactor : board-&gt;boards로 통일">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/boards/dummy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/boards/mock-posts.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/boards/posts.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/boards.ts" afterDir="false" />
-    </list>
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : board -&gt; boards 리팩토링까먹었던거 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
-      <workItem from="1746450972725" duration="7122000" />
+      <workItem from="1746450972725" duration="7422000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -262,7 +253,31 @@
       <option name="project" value="LOCAL" />
       <updated>1746456091256</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat : 뷰어 기능 추가">
+      <option name="closed" value="true" />
+      <created>1746461986458</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746461986458</updated>
+    </task>
+    <task id="LOCAL-00017" summary="fix : 누락된 파일 추가">
+      <option name="closed" value="true" />
+      <created>1746462233152</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746462233152</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix : board -&gt; boards 리팩토링까먹었던거 수정">
+      <option name="closed" value="true" />
+      <created>1746462262801</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1746462262801</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +296,9 @@
     <MESSAGE value="chore : CR_PAT로 변경" />
     <MESSAGE value="fix : 라우팅 경로 수정" />
     <MESSAGE value="refactor : board-&gt;boards로 통일" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor : board-&gt;boards로 통일" />
+    <MESSAGE value="feat : 뷰어 기능 추가" />
+    <MESSAGE value="fix : 누락된 파일 추가" />
+    <MESSAGE value="fix : board -&gt; boards 리팩토링까먹었던거 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix : board -&gt; boards 리팩토링까먹었던거 수정" />
   </component>
 </project>

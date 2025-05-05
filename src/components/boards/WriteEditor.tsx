@@ -19,7 +19,7 @@ import TableHeader from '@tiptap/extension-table-header'
 import {Placeholder} from "@tiptap/extension-placeholder";
 import { useEditor, EditorContent } from '@tiptap/react'
 import { useState } from 'react'
-import EditorToolbar from '@/components/board/ui/Toolbar'
+import EditorToolbar from '@/components/boards/ui/Toolbar'
 import clsx from 'clsx'
 
 export const editorClass = clsx(
