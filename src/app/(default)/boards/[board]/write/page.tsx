@@ -1,7 +1,7 @@
 // src/app/office-of-architect/write/page.tsx
 import dynamic from 'next/dynamic'
 
-const WriteEditor = dynamic(() => import('@/components/board/WriteEditor'), {
+const WriteEditor = dynamic(() => import('@/components/boards/WriteEditor'), {
     ssr: false,
 })
 
