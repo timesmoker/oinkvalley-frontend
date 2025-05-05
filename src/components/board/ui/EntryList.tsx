@@ -1,13 +1,14 @@
 // src/components/board/ui/EntryList.tsx
 "use client";
 
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import {Entry,BoardProps} from "@/types/board";
 import {PageResponse} from "@/types/pagination"
 
 export default function EntryList({ boardType }: BoardProps) {
+    const baseHref = `/boards/${boardType}`;
     const [entries, setEntries] = useState<Entry[]>([]);
     const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(1);
@@ -17,7 +18,7 @@ export default function EntryList({ boardType }: BoardProps) {
     useEffect(() => {
         fetch(`/api/${boardType}/posts?page=${page}&size=${pageSize}`)
             .then((res) => res.json())
-            .then((data: PageResponse) => {
+            .then((data: PageResponse<Entry>) => {
                 setEntries(data.content);
                 setTotalPages(data.totalPages);
             });
@@ -26,11 +27,11 @@ export default function EntryList({ boardType }: BoardProps) {
     return (
         <div className="border rounded-md overflow-hidden">
             <ul>
-                {currentEntries.map((entry, i) => (
+                {entries.map((entry, i) => (
                     <li
                         key={entry.id}
                         className={`flex items-center gap-3 px-4 py-3 ${
-                            i < currentEntries.length - 1 ? "border-b" : ""
+                            i < entries.length - 1 ? "border-b" : ""
                         }`}
                     >
                         <FileText className="w-5 h-5 text-muted-foreground" />

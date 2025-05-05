@@ -16,5 +16,4 @@ export type Comment = {
 
 export type BoardProps = {
     boardType:string;
-
 };

@@ -1,4 +1,4 @@
-// src/lib/boardConfigs.ts
+// src/data/board/boardConfigs.ts
 export const boardConfigs = {
     "office-of-architect": {
         name: "📚 사무소 서류",
