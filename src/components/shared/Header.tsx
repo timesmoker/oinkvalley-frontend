@@ -11,7 +11,7 @@ export default function Header() {
             </Link>
             <nav className="hidden md:flex justify-end gap-6 text-sm text-gray-600">
                 <Link href="#" className="hover:scale-125 hover:text-black transition">달력</Link>
-                <Link href="/board/office-of-architect" className="hover:scale-125 hover:text-black transition">건축 사무소</Link>
+                <Link href="/boards/office-of-architect" className="hover:scale-125 hover:text-black transition">건축 사무소</Link>
                 <Link href="#" className="hover:scale-125 hover:text-black transition">게시판</Link>
                 <Link href="#" className="hover:scale-125 hover:text-black transition">칭찬 스티커</Link>
             </nav>
