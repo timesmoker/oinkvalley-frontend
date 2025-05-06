@@ -22,6 +22,7 @@ import { useState } from 'react'
 import EditorToolbar from '@/components/boards/ui/Toolbar'
 import clsx from 'clsx'
 
+
 export const editorClass = clsx(
     'prose',
     'max-w-none',
@@ -73,7 +74,7 @@ export const editorClass = clsx(
 )
 
 
-export default function WriteEditor() {
+export default function WriteEditor({ boardType }: { boardType: string }) {
     const [title, setTitle] = useState('')
 
     const editor = useEditor({
@@ -105,6 +106,39 @@ export default function WriteEditor() {
         content: '',
     })
 
+    const handleSave = async () => {
+        if (!editor) return;
+
+        const json = editor.getJSON();
+        const token = localStorage.getItem('token');
+
+        try {
+            const res = await fetch(`/api/boards/${boardType}/posts`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    title,
+                    content: json,
+                }),
+            });
+
+            if (!res.ok) throw new Error('저장 실패');
+
+            const result = await res.json();
+            console.log('✅ 저장 완료:', result);
+
+            window.location.href = `/boards/${boardType}`;
+        } catch (err) {
+            console.error('❌ 에러 발생:', err);
+            alert('저장 중 오류 발생');
+        }
+    };
+
+
 
 
     return (
@@ -127,10 +161,7 @@ export default function WriteEditor() {
             <div className="flex gap-2 justify-end">
                 <button
                     className="px-4 py-2 border rounded bg-gray-100"
-                    onClick={() => {
-                        const json = editor?.getJSON()
-                        console.log('저장할 내용:', { title, content: json })
-                    }}
+                    onClick={handleSave}
                 >
                     💾 저장
                 </button>
@@ -162,3 +193,4 @@ export default function WriteEditor() {
         </div>
     )
 }
+
