@@ -41,8 +41,12 @@ export default function Viewer({ content }: { content: JSONContent }) {
     })
 
     return (
-        <div className="prose max-w-none">
-            <EditorContent editor={editor} />
+        <div className="prose max-w-none min-h-[200px]">
+            {editor ? (
+                <EditorContent editor={editor} />
+            ) : (
+                <div className="text-gray-400">로딩 중...</div>
+            )}
         </div>
     )
 }
