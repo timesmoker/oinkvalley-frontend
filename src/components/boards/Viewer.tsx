@@ -41,7 +41,7 @@ export default function Viewer({ content }: { content: JSONContent }) {
     })
 
     return (
-        <div className="prose max-w-none border p-6 bg-white rounded shadow">
+        <div className="prose max-w-none">
             <EditorContent editor={editor} />
         </div>
     )
