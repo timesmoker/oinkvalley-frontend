@@ -1,28 +1,20 @@
 // src/components/board/ui/EntryList.tsx
-"use client";
-
-import {useEffect, useState} from "react";
 import Link from "next/link";
 import { FileText } from "lucide-react";
-import {Entry,BoardProps} from "@/types/boards";
-import {PageResponse} from "@/types/pagination"
+import { Entry } from "@/types/boards";
 
-export default function EntryList({ boardType }: BoardProps) {
+export default function EntryList({
+                                      entries,
+                                      boardType,
+                                      page,
+                                      totalPages,
+                                  }: {
+    entries: Entry[];
+    boardType: string;
+    page: number;
+    totalPages: number;
+}) {
     const baseHref = `/boards/${boardType}`;
-    const [entries, setEntries] = useState<Entry[]>([]);
-    const [page, setPage] = useState(0);
-    const [totalPages, setTotalPages] = useState(1);
-
-    const pageSize = 20;
-
-    useEffect(() => {
-        fetch(`/api/boards/${boardType}/posts?page=${page}&size=${pageSize}`)
-            .then((res) => res.json())
-            .then((data: PageResponse<Entry>) => {
-                setEntries(data.content);
-                setTotalPages(data.totalPages);
-            });
-    }, [page, boardType]);
 
     return (
         <div className="border rounded-md overflow-hidden">
@@ -35,33 +27,29 @@ export default function EntryList({ boardType }: BoardProps) {
                         }`}
                     >
                         <FileText className="w-5 h-5 text-muted-foreground" />
-                        <Link href="#" as={`${baseHref}/${entry.id}`}
-                              className="text-base font-medium hover:underline">
+                        <Link href={`${baseHref}/${entry.id}`} className="text-base font-medium hover:underline">
                             {entry.title}
                         </Link>
-
                     </li>
                 ))}
             </ul>
 
             <div className="flex justify-between items-center px-4 py-3 border-t bg-muted">
-                <button
-                    onClick={() => setPage(Math.max(0, page - 1))}
-                    disabled={page === 0}
-                    className="text-sm hover:underline disabled:opacity-50"
+                <Link
+                    href={`${baseHref}?page=${Math.max(0, page - 1)}`}
+                    className="text-sm hover:underline"
+                    aria-disabled={page === 0}
                 >
                     이전
-                </button>
-                <span className="text-sm text-muted-foreground">
-          {page + 1} / {totalPages}
-        </span>
-                <button
-                    onClick={() => setPage(Math.min(totalPages - 1, page + 1))}
-                    disabled={page >= totalPages - 1}
-                    className="text-sm hover:underline disabled:opacity-50"
+                </Link>
+                <span className="text-sm text-muted-foreground">{page + 1} / {totalPages}</span>
+                <Link
+                    href={`${baseHref}?page=${Math.min(totalPages - 1, page + 1)}`}
+                    className="text-sm hover:underline"
+                    aria-disabled={page >= totalPages - 1}
                 >
                     다음
-                </button>
+                </Link>
             </div>
         </div>
     );

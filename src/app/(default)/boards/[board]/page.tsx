@@ -1,18 +1,44 @@
-// src/app/board/[board]/page.tsx
+// src/app/(default)/boards/[board]/page.tsx
+
 import { boardConfigs } from "@/data/boards/boardConfigs";
 import { notFound } from "next/navigation";
 import EntryList from "@/components/boards/ui/EntryList";
 import Link from "next/link";
+import { Entry } from "@/types/boards";
+import { PageResponse } from "@/types/pagination";
 
-export default function BoardPage({ params }: { params: { board: string } }) {
+export default async function BoardPage({
+                                            params,
+                                            searchParams,
+                                        }: {
+    params: { board: string };
+    searchParams: { page?: string };
+}) {
     const config = boardConfigs[params.board as keyof typeof boardConfigs];
-
     if (!config) return notFound();
+
+    const page = parseInt(searchParams.page || '0', 10);
+
+    const res = await fetch(
+        `http://nginx/api/boards/${params.board}/posts?page=${page}&size=20`,
+        { cache: 'no-store' }
+    );
+
+    if (!res.ok) return notFound();
+
+    const data: PageResponse<Entry> = await res.json();
+
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
-            <EntryList boardType={params.board} />
+            <EntryList
+                entries={data.content}
+                boardType={params.board}
+                page={page}
+                totalPages={data.totalPages}
+            />
+
             <div className="mt-8 flex justify-end">
                 <Link
                     href={`/boards/${params.board}/write`}
@@ -21,7 +47,6 @@ export default function BoardPage({ params }: { params: { board: string } }) {
                     글쓰기
                 </Link>
             </div>
-
         </div>
     );
 }
