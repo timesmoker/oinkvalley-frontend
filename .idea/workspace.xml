@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : 클라이언트 fetch axios기반으로 변경">
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="chore : 간단한 페이지 로딩 메세지">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/signup/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746605286889</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="chore : 간단한 페이지 로딩 메세지">
+      <option name="closed" value="true" />
+      <created>1746633828388</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1746633828388</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,6 +373,7 @@
     <MESSAGE value="feat : 로그인, 회원가입 기능 추가, zustand 통해 전역 상태 관리" />
     <MESSAGE value="feat : 글쓰기 기능 추가" />
     <MESSAGE value="feat : 클라이언트 fetch axios기반으로 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 클라이언트 fetch axios기반으로 변경" />
+    <MESSAGE value="chore : 간단한 페이지 로딩 메세지" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore : 간단한 페이지 로딩 메세지" />
   </component>
 </project>

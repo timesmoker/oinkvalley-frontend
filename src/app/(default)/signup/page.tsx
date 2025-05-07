@@ -9,6 +9,7 @@ import axios from "axios";
 export default function SignUpForm() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [username, setUsername] = useState('')
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
 
@@ -19,8 +20,9 @@ export default function SignUpForm() {
 
         try {
             await apiClient.post('/auth/signup', {
+                username,
                 email,
-                passwordHash: password, // 추후에 양쪽다 그냥 password로 변경 해야함
+                passwordHash: password,
             })
 
             setSuccess('회원가입이 완료되었습니다.')
@@ -60,6 +62,17 @@ export default function SignUpForm() {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
+                        className="w-full px-3 py-2 border rounded"
+                    />
+                </div>
+
+                <div>
+                    <label className="block text-sm font-medium">닉네임</label>
+                    <input
+                        type="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         required
                         className="w-full px-3 py-2 border rounded"
                     />

@@ -6,7 +6,8 @@ import { Button } from "@/components/shared/ui/Button";
 import Link from "next/link";
 
 export default function Header() {
-    const { isLoggedIn, logout } = useAuthStore();
+    const { logout } = useAuthStore();
+    const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
 
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center border-b bg-white/60 backdrop-blur-md fixed top-0 z-50">
