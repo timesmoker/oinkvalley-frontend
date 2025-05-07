@@ -1,6 +1,10 @@
+//src/app/(default)/signup/page.tsx
 'use client'
 
 import { useState } from 'react'
+import apiClient from '@/lib/api/apiClient'
+import axios from "axios";
+
 
 export default function SignUpForm() {
     const [email, setEmail] = useState('')
@@ -14,27 +18,25 @@ export default function SignUpForm() {
         setSuccess('')
 
         try {
-            const res = await fetch('/api/auth/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email,
-                    passwordHash: password,
-                }),
+            await apiClient.post('/auth/signup', {
+                email,
+                passwordHash: password, // 추후에 양쪽다 그냥 password로 변경 해야함
             })
 
-            if (!res.ok) throw new Error('회원가입 실패')
-
-            setSuccess('🎉 회원가입이 완료되었습니다.')
+            setSuccess('회원가입이 완료되었습니다.')
             setEmail('')
             setPassword('')
         } catch (err) {
-            console.error('❌ 에러:', err)
-            setError('회원가입에 실패했습니다.')
+            console.error('에러:', err)
+
+            if (axios.isAxiosError(err)) {
+                setError(err.response?.data?.error || '회원가입에 실패했습니다.')
+            } else {
+                setError('알 수 없는 오류가 발생했습니다.')
+            }
         }
     }
+
 
     return (
         <div className="max-w-md mx-auto mt-20 p-6 border rounded shadow bg-white">

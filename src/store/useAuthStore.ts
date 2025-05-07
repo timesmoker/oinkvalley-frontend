@@ -1,6 +1,6 @@
-//src/store/useAuthStore.ts
-
+// src/store/useAuthStore.ts
 import { create } from 'zustand'
+import apiClient from "@/lib/api/apiClient";
 
 type AuthStore = {
     isLoggedIn: boolean;
@@ -8,18 +8,20 @@ type AuthStore = {
     token: string | null;
     login: (token: string, user: AuthStore['user']) => void;
     logout: () => void;
-};
+}
 
 export const useAuthStore = create<AuthStore>((set) => ({
     isLoggedIn: false,
     user: null,
     token: null,
     login: (token, user) => {
-        localStorage.setItem('token', token);
-        set({ isLoggedIn: true, token, user });
+        set({ isLoggedIn: true, token, user })
+        localStorage.setItem('token', token)
     },
-    logout: () => {
-        localStorage.removeItem('token');
-        set({ isLoggedIn: false, token: null, user: null });
-    },
-}));
+    logout() {
+        localStorage.removeItem('token')
+        delete apiClient.defaults.headers.common['Authorization']
+        set({ token: null, user: null })
+    }
+
+}))

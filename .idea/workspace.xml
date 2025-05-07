@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : dynamic으로 ssr 방지">
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : 글쓰기 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[board]/write/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/boards/WriteEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/WriteEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/shared/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/ui/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/ui/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/useAuthStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
-      <workItem from="1746450972725" duration="27575000" />
+      <workItem from="1746450972725" duration="37246000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -310,7 +314,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746499517783</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat : 로그인, 회원가입 기능 추가, zustand 통해 전역 상태 관리">
+      <option name="closed" value="true" />
+      <created>1746537088710</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1746537088710</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat : 글쓰기 기능 추가">
+      <option name="closed" value="true" />
+      <created>1746537128847</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1746537128847</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,6 +353,8 @@
     <MESSAGE value="fix : 누락된 파일 추가" />
     <MESSAGE value="fix : board -&gt; boards 리팩토링까먹었던거 수정" />
     <MESSAGE value="fix : dynamic으로 ssr 방지" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : dynamic으로 ssr 방지" />
+    <MESSAGE value="feat : 로그인, 회원가입 기능 추가, zustand 통해 전역 상태 관리" />
+    <MESSAGE value="feat : 글쓰기 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 글쓰기 기능 추가" />
   </component>
 </project>

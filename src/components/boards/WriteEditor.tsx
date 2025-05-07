@@ -1,5 +1,6 @@
 'use client'
 
+import apiClient from '@/lib/api/apiClient'
 import StarterKit from '@tiptap/starter-kit'
 import Underline from '@tiptap/extension-underline'
 import Image from '@tiptap/extension-image'
@@ -112,31 +113,25 @@ export default function WriteEditor({ boardType }: { boardType: string }) {
         const json = editor.getJSON();
         const token = localStorage.getItem('token');
 
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            return;
+        }
+
         try {
-            const res = await fetch(`/api/boards/${boardType}/posts`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    Authorization: `Bearer ${token}`,
-                },
-                body: JSON.stringify({
-                    title,
-                    content: json,
-                }),
+            const res = await apiClient.post(`/boards/${boardType}/posts`, {
+                title,
+                content: json,
             });
 
-            if (!res.ok) throw new Error('저장 실패');
-
-            const result = await res.json();
-            console.log('✅ 저장 완료:', result);
-
+            console.log('✅ 저장 완료:', res.data);
             window.location.href = `/boards/${boardType}`;
         } catch (err) {
             console.error('❌ 에러 발생:', err);
             alert('저장 중 오류 발생');
         }
     };
+
 
 
 
