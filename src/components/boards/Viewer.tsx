@@ -1,6 +1,10 @@
 //src/components/board/Viewer.tsx
 'use client'
 
+import { useRouter } from 'next/navigation'
+import apiClient from '@/lib/api/apiClient'
+
+
 import { useEditor, EditorContent } from '@tiptap/react'
 import { JSONContent } from '@tiptap/core'
 import StarterKit from '@tiptap/starter-kit'
@@ -18,7 +22,10 @@ import TableRow from '@tiptap/extension-table-row'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 
-export default function Viewer({ content }: { content: JSONContent }) {
+export default function Viewer({content,}: { content: JSONContent; }) {
+
+
+
     const editor = useEditor({
         editable: false,
         content,
@@ -47,6 +54,10 @@ export default function Viewer({ content }: { content: JSONContent }) {
             ) : (
                 <div className="text-gray-400">로딩 중...</div>
             )}
+
         </div>
+
+
     )
 }
+

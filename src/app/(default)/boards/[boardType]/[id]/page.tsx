@@ -1,18 +1,19 @@
-// src/app/board/[board]/[id]/page.tsx
+// src/app/board/[boardType]/[id]/page.tsx
 
 import { notFound } from "next/navigation";
 import {boardConfigs} from "@/data/boards/boardConfigs";
 import {PostDetail} from "@/types/posts";
 import dynamic from "next/dynamic";
+import DeletePostButton from "@/components/boards/ui/DeletePostButton";
 
 const Viewer = dynamic(() => import('@/components/boards/Viewer'), { ssr: false });
 
-export default async function PostPage({ params }: { params: { board: string; id: string } }) {
-    const config = boardConfigs[params.board as keyof typeof boardConfigs]
+export default async function PostPage({ params }: { params: { boardType: string; id: string } }) {
+    const config = boardConfigs[params.boardType as keyof typeof boardConfigs]
     if (!config) return notFound()
 
     const res = await fetch(
-        `http://nginx/api/boards/${params.board}/posts/${params.id}`,
+        `http://nginx/api/boards/${params.boardType}/posts/${params.id}`,
         { cache: 'no-store' }
     )
 
@@ -51,9 +52,15 @@ export default async function PostPage({ params }: { params: { board: string; id
                 {/* 본문 내용 줄 */}
                 <div className="px-4 py-6 bg-white">
                     <div className="prose max-w-none">
-                        <Viewer content={post.content} />
+                        <Viewer
+                            content={post.content}
+                        />
                     </div>
                 </div>
+
+            </div>
+            <div className="flex gap-2 justify-end mt-4">
+                <DeletePostButton boardType={params.boardType} postId={post.id} />
             </div>
         </div>
     )

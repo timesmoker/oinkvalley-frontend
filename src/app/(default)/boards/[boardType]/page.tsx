@@ -1,4 +1,4 @@
-// src/app/(default)/boards/[board]/page.tsx
+// src/app/(default)/boards/[boardType]/page.tsx
 
 import { boardConfigs } from "@/data/boards/boardConfigs";
 import { notFound } from "next/navigation";
@@ -11,16 +11,16 @@ export default async function BoardPage({
                                             params,
                                             searchParams,
                                         }: {
-    params: { board: string };
+    params: { boardType: string };
     searchParams: { page?: string };
 }) {
-    const config = boardConfigs[params.board as keyof typeof boardConfigs];
+    const config = boardConfigs[params.boardType as keyof typeof boardConfigs];
     if (!config) return notFound();
 
     const page = parseInt(searchParams.page || '0', 10);
 
     const res = await fetch(
-        `http://nginx/api/boards/${params.board}/posts?page=${page}&size=20`,
+        `http://nginx/api/boards/${params.boardType}/posts?page=${page}&size=20`,
         { cache: 'no-store' }
     );
 
@@ -34,14 +34,14 @@ export default async function BoardPage({
 
             <EntryList
                 entries={data.content}
-                boardType={params.board}
+                boardType={params.boardType}
                 page={page}
                 totalPages={data.totalPages}
             />
 
             <div className="mt-8 flex justify-end">
                 <Link
-                    href={`/boards/${params.board}/write`}
+                    href={`/boards/${params.boardType}/write`}
                     className="bg-blue-600 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-500 transition"
                 >
                     글쓰기
