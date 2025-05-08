@@ -55,8 +55,8 @@ export default function Header() {
                     )
                 ) : (
                     <>
-                        <div className="w-[80px] h-9 bg-gray-100 rounded animate-pulse" />
-                        <div className="w-[80px] h-9 bg-gray-100 rounded animate-pulse" />
+                        <div className="w-[80px] h-9 invisible" />
+                        <div className="w-[80px] h-9 invisible" />
                     </>
                 )}
             </div>
