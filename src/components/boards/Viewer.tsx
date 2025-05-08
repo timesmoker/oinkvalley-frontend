@@ -1,9 +1,6 @@
 //src/components/board/Viewer.tsx
 'use client'
 
-import { useRouter } from 'next/navigation'
-import apiClient from '@/lib/api/apiClient'
-
 
 import { useEditor, EditorContent } from '@tiptap/react'
 import { JSONContent } from '@tiptap/core'
