@@ -5,7 +5,6 @@ import { persist } from 'zustand/middleware';
 type AuthStore = {
     isLoggedIn: boolean;
     user: { id: number; email: string; roles: string[] } | null;
-    token: string | null;
     login: (token: string, user: AuthStore['user']) => void;
     logout: () => void;
     hasHydrated: boolean;
@@ -17,12 +16,13 @@ export const useAuthStore = create<AuthStore>()(
         (set) => ({
             isLoggedIn: false,
             user: null,
-            token: null,
             login: (token, user) => {
-                set({ isLoggedIn: true, token, user });
+                localStorage.setItem('token', token);
+                set({ isLoggedIn: true, user });
             },
             logout: () => {
-                set({ isLoggedIn: false, token: null, user: null });
+                localStorage.removeItem('token');
+                set({ isLoggedIn: false, user: null });
             },
             hasHydrated: false,
             setHasHydrated: (value) => set({ hasHydrated: value }),
