@@ -1,6 +1,6 @@
 // src/store/useAuthStore.ts
-import { create } from 'zustand'
-import apiClient from "@/lib/api/apiClient";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 type AuthStore = {
     isLoggedIn: boolean;
@@ -8,20 +8,30 @@ type AuthStore = {
     token: string | null;
     login: (token: string, user: AuthStore['user']) => void;
     logout: () => void;
-}
+    hasHydrated: boolean;
+    setHasHydrated: (value: boolean) => void;
+};
 
-export const useAuthStore = create<AuthStore>((set) => ({
-    isLoggedIn: false,
-    user: null,
-    token: null,
-    login: (token, user) => {
-        set({ isLoggedIn: true, token, user })
-        localStorage.setItem('token', token)
-    },
-    logout() {
-        localStorage.removeItem('token')
-        delete apiClient.defaults.headers.common['Authorization']
-        set({ token: null, user: null })
-    }
-
-}))
+export const useAuthStore = create<AuthStore>()(
+    persist(
+        (set) => ({
+            isLoggedIn: false,
+            user: null,
+            token: null,
+            login: (token, user) => {
+                set({ isLoggedIn: true, token, user });
+            },
+            logout: () => {
+                set({ isLoggedIn: false, token: null, user: null });
+            },
+            hasHydrated: false,
+            setHasHydrated: (value) => set({ hasHydrated: value }),
+        }),
+        {
+            name: 'auth-storage',
+            onRehydrateStorage: () => (state) => {
+                state?.setHasHydrated(true);
+            },
+        }
+    )
+);

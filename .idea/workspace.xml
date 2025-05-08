@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : 헤더에서 zustand 상태 추적">
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[board]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/useAuthStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746659870383</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가">
+      <option name="closed" value="true" />
+      <created>1746667429258</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1746667429258</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,6 +393,7 @@
     <MESSAGE value="feat : 클라이언트 fetch axios기반으로 변경" />
     <MESSAGE value="chore : 간단한 페이지 로딩 메세지" />
     <MESSAGE value="fix : 헤더에서 zustand 상태 추적" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : 헤더에서 zustand 상태 추적" />
+    <MESSAGE value="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가" />
   </component>
 </project>
