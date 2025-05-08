@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/useAuthStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,36 +57,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.30&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "develop",
+    "javascript.nodejs.core.library.configured.version": "20.19.0",
+    "javascript.nodejs.core.library.typings.version": "20.17.30",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node",
+    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/(default)/board" />
@@ -169,6 +167,7 @@
       <updated>1744959804609</updated>
       <workItem from="1744959805715" duration="438000" />
       <workItem from="1746450972725" duration="37615000" />
+      <workItem from="1746700829674" duration="1649000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />

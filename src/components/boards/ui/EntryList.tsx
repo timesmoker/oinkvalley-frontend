@@ -1,7 +1,21 @@
-// src/components/board/ui/EntryList.tsx
+// src/components/boards/ui/EntryList.tsx
+
 import Link from "next/link";
 import { FileText } from "lucide-react";
 import { Entry } from "@/types/boards";
+
+function formatDate(dateStr: string) {
+    const date = new Date(dateStr);
+    const now = new Date();
+    const diff = now.getTime() - date.getTime();
+
+    const within24Hours = diff < 24 * 60 * 60 * 1000;
+    if (within24Hours) {
+        return date.toTimeString().slice(0, 5); // "hh:mm"
+    } else {
+        return date.toISOString().slice(2, 10).replace(/-/g, "."); // "yy.mm.dd"
+    }
+}
 
 export default function EntryList({
                                       entries,
@@ -16,20 +30,37 @@ export default function EntryList({
 }) {
     const baseHref = `/boards/${boardType}`;
 
+
     return (
         <div className="border rounded-md overflow-hidden">
             <ul>
+                <li className="flex items-center px-4 py-2 border-b bg-muted text-sm font-semibold text-muted-foreground">
+                    <div className="flex-1 truncate">제목</div>
+                    <div className="flex items-center gap-4 ml-4">
+                        <div className="w-24 text-center">작성자</div>
+                        <div className="w-20 text-center">작성시각</div>
+                    </div>
+                </li>
+
                 {entries.map((entry, i) => (
                     <li
                         key={entry.id}
-                        className={`flex items-center gap-3 px-4 py-3 ${
+                        className={`flex items-center px-4 py-3 text-sm ${
                             i < entries.length - 1 ? "border-b" : ""
                         }`}
                     >
-                        <FileText className="w-5 h-5 text-muted-foreground" />
-                        <Link href={`${baseHref}/${entry.id}`} className="text-base font-medium hover:underline">
-                            {entry.title}
+                        <FileText className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" />
+                        <Link
+                            href={`${baseHref}/${entry.id}`}
+                            className="flex-1 min-w-0 truncate hover:underline"
+                            title={entry.title}
+                        >
+                            {entry.title} [{entry.commentCount}]
                         </Link>
+                        <div className="flex items-center gap-4 ml-4">
+                            <div className="w-24 text-right truncate">{entry.authorName}</div>
+                            <div className="w-20 text-center text-muted-foreground">{formatDate(entry.createdAt)}</div>
+                        </div>
                     </li>
                 ))}
             </ul>
