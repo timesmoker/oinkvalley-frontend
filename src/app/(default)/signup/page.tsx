@@ -12,12 +12,17 @@ export default function SignUpForm() {
     const [username, setUsername] = useState('')
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const SIGNUP_ENABLED = process.env.NEXT_SIGNUP_ENABLED === 'false'
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setError('')
         setSuccess('')
 
+        if (!SIGNUP_ENABLED) {
+            setError('현재는 회원가입을 받고 있지 않습니다.')
+            return
+        }
         try {
             await apiClient.post('/auth/signup', {
                 username,
