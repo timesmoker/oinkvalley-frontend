@@ -2,13 +2,13 @@
 
 import { notFound } from "next/navigation";
 import {boardConfigs} from "@/data/boards/boardConfigs";
-import {PostDetail} from "@/types/posts";
+import {PostDetail} from "@/types/board/posts";
 import dynamic from "next/dynamic";
 import DeletePostButton from "@/components/boards/ui/DeletePostButton";
-import CommentList from "@/components/boards/CommentList";
-import {BoardComment} from "@/types/boards";
 
 const Viewer = dynamic(() => import('@/components/boards/Viewer'), { ssr: false });
+const Comments = dynamic(() => import('@/components/boards/Comments'), { ssr: false })
+
 
 export default async function PostPage({ params }: { params: { boardType: string; postId: string } }) {
     const config = boardConfigs[params.boardType as keyof typeof boardConfigs]
@@ -23,16 +23,9 @@ export default async function PostPage({ params }: { params: { boardType: string
 
     const post: PostDetail = await postRes.json()
 
-    const commentRes = await fetch(`http://nginx/api/boards/${params.boardType}/posts/${params.postId}/comments`, {
-        cache: 'no-store'
-    })
-
-
-    const comments: BoardComment[] = commentRes.ok ? await commentRes.json() : []
-
 
     return (
-        <div className="p-6">
+        <div className="p-6 w-4/5 mx-auto">
             {/* 게시판 이름 */}
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
@@ -61,7 +54,7 @@ export default async function PostPage({ params }: { params: { boardType: string
 
                 {/* 본문 내용 줄 */}
                 <div className="px-4 py-6 bg-white">
-                    <div className="prose max-w-none">
+                    <div className="prose min-h-[200px]">
                         <Viewer
                             content={post.content}
                         />
@@ -72,9 +65,9 @@ export default async function PostPage({ params }: { params: { boardType: string
             <div className="flex gap-2 justify-end mt-4">
                 <DeletePostButton boardType={params.boardType} postId={post.id} />
             </div>
-
-
-            <CommentList comments={comments} />
+            <div className="w-4/5 mx-auto space-y-6">
+                <Comments boardType={params.boardType} postId={params.postId} />
+            </div>
         </div>
     )
 

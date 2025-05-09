@@ -4,7 +4,7 @@ import { boardConfigs } from "@/data/boards/boardConfigs";
 import { notFound } from "next/navigation";
 import EntryList from "@/components/boards/EntryList";
 import Link from "next/link";
-import { Entry } from "@/types/boards";
+import { PostEntries } from "@/types/board/postEntries";
 import { PageResponse } from "@/types/pagination";
 
 export default async function BoardPage({
@@ -26,10 +26,10 @@ export default async function BoardPage({
 
     if (!res.ok) return notFound();
 
-    const data: PageResponse<Entry> = await res.json();
+    const data: PageResponse<PostEntries> = await res.json();
 
     return (
-        <div className="p-6">
+        <div className="p-6 w-4/5 mx-auto">
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
             <EntryList

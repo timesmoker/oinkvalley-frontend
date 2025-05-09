@@ -1,3 +1,5 @@
+// src/components/boards/CommentEditor.tsx
+
 'use client'
 
 import apiClient from '@/lib/api/apiClient'
@@ -25,18 +27,21 @@ import clsx from 'clsx'
 
 
 export const editorClass = clsx(
-    'prose',
+    'text-sm',
+    'leading-snug',
+    'w-full',
     'max-w-none',
-    'border',
-    'p-6',
-    'rounded',
+    'min-h-[50px]',
+    'max-h-none',
     'bg-white',
-    'relative',
+    'border',
+    'rounded',
+    'px-3',
+    'py-2',
     'cursor-text',
-    'min-h-[500px]',
     'focus:outline-none',
-
-    // placeholder 스타일
+    'mx-auto',
+    // placeholder
     '[&_.is-empty]:text-gray-400',
     '[&_.is-empty]:before:content-[attr(data-placeholder)]',
     '[&_.is-empty]:before:float-left',
@@ -45,23 +50,7 @@ export const editorClass = clsx(
     '[&_.is-empty]:before:h-0',
 
     // 콘텐츠 wrapper 높이 확보
-    '[&>div]:min-h-[400px]',
-
-    // 표 스타일 - 너비 제한 + 가운데 정렬 + table-layout 고정
-    '[&_table]:mx-auto',
-    '[&_table]:w-[700px]',
-    '[&_table]:min-w-[400px]',
-    '[&_table]:max-w-full',
-    '[&_table]:table-fixed',
-
-    // 셀 스타일 - 줄바꿈 + 정렬 + 기본 너비
-    '[&_th]:border',
-    '[&_td]:border',
-    '[&_td]:px-2',
-    '[&_td]:py-1',
-    '[&_td]:break-words',
-    '[&_td]:align-top',
-    '[&_td]:min-w-[100px]',
+    '[&>div]:min-h-[50px]',
 
     // 문단/헤딩 등 기본 블록 스타일
     '[&_p]:my-2',
@@ -72,19 +61,21 @@ export const editorClass = clsx(
     '[&_ol]:my-4',
     '[&_blockquote]:my-4',
     '[&_pre]:my-4',
+
+
 )
 
 
-export default function PostEditor({
-                                       boardType,
-                                       onSuccess
-                                    }:{
+export default function CommentEditor({
+                                          boardType,
+                                          postId,
+                                          onSuccess,
+                                      }: {
     boardType: string
+    postId: string
     onSuccess?: () => void
-})
-{
+}) {
 
-    const [title, setTitle] = useState('')
     const [submitting, setSubmitting] = useState(false)
 
     const editor = useEditor({
@@ -109,7 +100,7 @@ export default function PostEditor({
             TableHeader,
             TableCell,
             Placeholder.configure({
-                placeholder: '오잉크 밸리 에디터 테스트 중, 표 안됨! 피드백 환영!',
+                placeholder: '댓글을 입력하세요!',
                 showOnlyCurrent: false,
             }),
         ],
@@ -131,67 +122,47 @@ export default function PostEditor({
         }
 
         try {
-            const res = await apiClient.post(`/boards/${boardType}/posts`, {
-                title,
+            const res = await apiClient.post(`/boards/${boardType}/posts/${postId}/comments`, {
                 content: json,
-            });
+            })
 
             console.log('✅ 저장 완료:', res.data);
+            editor.commands.clearContent()
             onSuccess?.()
         } catch (err) {
-            console.error('❌ 에러 발생:', err);
-            alert('저장 중 오류 발생');
-        }finally {
+            console.error('❌ 댓글 작성 실패:', err)
+            alert('댓글 작성 중 오류가 발생했습니다.')
+        } finally {
             setSubmitting(false)
         }
-    };
+    }
+
+    return (<div className="mt-6 space-y-2 w-full mx-auto">
+            {/* 에디터 박스 */}
+            <div className="border rounded-md p-2 bg-white space-y-1">
+                <EditorToolbar editor={editor} />
+                <EditorContent
+                    editor={editor}
+                    className={clsx(
+                        editorClass
+                    )}
+                />
+            </div>
 
 
-
-
-
-    return (
-        <div className="flex flex-col gap-4">
-            {/* 제목 입력 */}
-            <input
-                className="text-2xl font-bold border-b p-2 outline-none"
-                placeholder="제목을 입력하세요"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-
-            {/* 툴바 */}
-            <EditorToolbar editor={editor} />
-            {/* 에디터 */}
-            <EditorContent editor={editor} className={editorClass} />
-
-
-            {/* 저장 및 미리보기 */}
-            <div className="flex gap-2 justify-end">
+            {/* 버튼 */}
+            <div className="flex justify-end">
                 <button
-                    className="px-4 py-2 border rounded bg-gray-100"
+                    className="bg-blue-600 text-white px-3 py-1.5 text-sm rounded hover:bg-blue-500 disabled:opacity-50"
                     onClick={handleSave}
                     disabled={submitting}
                 >
-                    💾 저장
+                    댓글 달기
                 </button>
             </div>
-
-            <style jsx>{`
-                .btn {
-                    padding: 4px 8px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 0.875rem;
-                    background: white;
-                    cursor: pointer;
-                }
-
-                .btn:hover {
-                    background: #f0f0f0;
-                }
-            `}</style>
         </div>
+
+
+
     )
 }
-

@@ -45,7 +45,7 @@ export default function Viewer({content,}: { content: JSONContent; }) {
     })
 
     return (
-        <div className="prose max-w-none min-h-[200px]">
+        <div className="max-w-none h-full">
             {editor ? (
                 <EditorContent editor={editor} />
             ) : (
