@@ -7,10 +7,10 @@ export type Entry = {
     commentCount: number;
 };
 
-export type Comment = {
+export type BoardComment = {
     id: number;
     content: string;
-    author: string;
+    authorName: string;
     createdAt: string;
 };
 

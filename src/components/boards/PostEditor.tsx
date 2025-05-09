@@ -75,8 +75,9 @@ export const editorClass = clsx(
 )
 
 
-export default function WriteEditor({ boardType }: { boardType: string }) {
+export default function PostEditor({ boardType }: { boardType: string },onSuccess?: () => void) {
     const [title, setTitle] = useState('')
+    const [submitting, setSubmitting] = useState(false)
 
     const editor = useEditor({
         extensions: [
@@ -108,13 +109,16 @@ export default function WriteEditor({ boardType }: { boardType: string }) {
     })
 
     const handleSave = async () => {
-        if (!editor) return;
+
+        if (!editor || submitting) return;
+        setSubmitting(true)
 
         const json = editor.getJSON();
         const token = localStorage.getItem('token');
 
         if (!token) {
             alert('로그인이 필요합니다.');
+            setSubmitting(false)
             return;
         }
 
@@ -125,10 +129,12 @@ export default function WriteEditor({ boardType }: { boardType: string }) {
             });
 
             console.log('✅ 저장 완료:', res.data);
-            window.location.href = `/boards/${boardType}`;
+            onSuccess?.()
         } catch (err) {
             console.error('❌ 에러 발생:', err);
             alert('저장 중 오류 발생');
+        }finally {
+            setSubmitting(false)
         }
     };
 
@@ -159,15 +165,6 @@ export default function WriteEditor({ boardType }: { boardType: string }) {
                     onClick={handleSave}
                 >
                     💾 저장
-                </button>
-                <button
-                    className="px-4 py-2 border rounded bg-blue-500 text-white"
-                    onClick={() => {
-                        const html = editor?.getHTML()
-                        console.log('미리보기:', html)
-                    }}
-                >
-                    👀 미리보기
                 </button>
             </div>
 

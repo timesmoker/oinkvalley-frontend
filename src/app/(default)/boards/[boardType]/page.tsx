@@ -2,7 +2,7 @@
 
 import { boardConfigs } from "@/data/boards/boardConfigs";
 import { notFound } from "next/navigation";
-import EntryList from "@/components/boards/ui/EntryList";
+import EntryList from "@/components/boards/EntryList";
 import Link from "next/link";
 import { Entry } from "@/types/boards";
 import { PageResponse } from "@/types/pagination";

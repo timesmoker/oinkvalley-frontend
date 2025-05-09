@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import {boardConfigs} from "@/data/boards/boardConfigs";
 import {notFound} from "next/navigation";
 
-const WriteEditor = dynamic(() => import('@/components/boards/WriteEditor'), {
+const WriteEditor = dynamic(() => import('@/components/boards/PostEditor'), {
     ssr: false,
 })
 

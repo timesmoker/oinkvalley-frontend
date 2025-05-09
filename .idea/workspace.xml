@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가">
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactoring : WriteEditor -&gt; PostEditor [boards], feat : onSuccess추가, 중복 요청 방지 위해 submitting추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/WriteEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/PostEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/ui/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/boards.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/boards.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +71,7 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "main",
     "javascript.nodejs.core.library.configured.version": "20.19.0",
     "javascript.nodejs.core.library.typings.version": "20.17.30",
     "js.debugger.nextJs.config.created.client": "true",
@@ -96,11 +101,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/boards" />
       <recent name="$PROJECT_DIR$/src/data/board" />
       <recent name="$PROJECT_DIR$/src/app/(default)/board/[board]" />
       <recent name="$PROJECT_DIR$/src/app/(default)" />
       <recent name="$PROJECT_DIR$/public/mock" />
-      <recent name="$PROJECT_DIR$/src/data/shared" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -121,7 +126,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -168,6 +173,7 @@
       <workItem from="1744959805715" duration="438000" />
       <workItem from="1746450972725" duration="37615000" />
       <workItem from="1746700829674" duration="1649000" />
+      <workItem from="1746770936012" duration="5213000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -353,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746667429258</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refactoring : WriteEditor -&gt; PostEditor [boards], feat : onSuccess추가, 중복 요청 방지 위해 submitting추가">
+      <option name="closed" value="true" />
+      <created>1746779651550</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1746779651550</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +407,7 @@
     <MESSAGE value="chore : 간단한 페이지 로딩 메세지" />
     <MESSAGE value="fix : 헤더에서 zustand 상태 추적" />
     <MESSAGE value="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : board-&gt;boardType으로 리팩토링, 삭제 기능 추가" />
+    <MESSAGE value="refactoring : WriteEditor -&gt; PostEditor [boards], feat : onSuccess추가, 중복 요청 방지 위해 submitting추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring : WriteEditor -&gt; PostEditor [boards], feat : onSuccess추가, 중복 요청 방지 위해 submitting추가" />
   </component>
 </project>
