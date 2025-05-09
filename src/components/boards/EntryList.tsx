@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FileText } from "lucide-react";
-import { Entry } from "@/types/boards";
+import { PostEntries } from "@/types/board/postEntries";
 
 function formatDate(dateStr: string) {
     const date = new Date(dateStr);
@@ -18,12 +18,12 @@ function formatDate(dateStr: string) {
 }
 
 export default function EntryList({
-                                      entries,
+                                      posts,
                                       boardType,
                                       page,
                                       totalPages,
                                   }: {
-    entries: Entry[];
+    posts: PostEntries[];
     boardType: string;
     page: number;
     totalPages: number;
@@ -42,11 +42,11 @@ export default function EntryList({
                     </div>
                 </li>
 
-                {entries.map((entry, i) => (
+                {posts.map((entry, i) => (
                     <li
                         key={entry.id}
                         className={`flex items-center px-4 py-3 text-sm ${
-                            i < entries.length - 1 ? "border-b" : ""
+                            i < posts.length - 1 ? "border-b" : ""
                         }`}
                     >
                         <FileText className="w-4 h-4 text-muted-foreground mr-2 flex-shrink-0" />
