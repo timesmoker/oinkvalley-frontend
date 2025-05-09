@@ -33,7 +33,7 @@ export default async function BoardPage({
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
             <EntryList
-                entries={data.content}
+                posts={data.content}
                 boardType={params.boardType}
                 page={page}
                 totalPages={data.totalPages}
