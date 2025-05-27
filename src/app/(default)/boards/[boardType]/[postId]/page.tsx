@@ -38,7 +38,7 @@ export default async function PostPage({ params }: { params: { boardType: string
 
                 {/* 작성자 + 날짜 줄 */}
                 <div className="border-b px-4 py-2 flex justify-between text-sm text-gray-700">
-                    <span>작성자 : {post.authorName || '익명'}</span>
+                    <span>작성자 : {post.username || '익명'}</span>
 
                     <span>작성시각 :{' '}
                         {new Date(post.createdAt).toLocaleString('ko-KR', {

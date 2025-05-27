@@ -52,7 +52,7 @@ export default function CommentList({
                         className="border rounded-md p-3 bg-gray-50 shadow-sm"
                     >
                         <div className="flex justify-between text-sm text-gray-500 mb-2">
-                            <span>{comment.authorName}</span>
+                            <span>{comment.username}</span>
                             <span>{new Date(comment.createdAt).toLocaleString()}</span>
                         </div>
                         <div className="text-sm leading-normal min-h-[25px]">

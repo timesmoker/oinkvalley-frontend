@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : entries-&gt; posts로 매개변수명 제대로 입력.." />
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : entries-&gt; posts로 매개변수명 제대로 입력..">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/CommentEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/CommentEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/CommentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/CommentList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/PostEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/PostEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api/apiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/api/apiClient.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/useAuthStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/board/postComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/postComment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/board/postEntries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/postEntries.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/board/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/posts.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,36 +69,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "main",
-    "javascript.nodejs.core.library.configured.version": "20.19.0",
-    "javascript.nodejs.core.library.typings.version": "20.17.30",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node",
-    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.46&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/(default)/board" />
@@ -167,6 +181,8 @@
       <workItem from="1746450972725" duration="37615000" />
       <workItem from="1746700829674" duration="1649000" />
       <workItem from="1746770936012" duration="20708000" />
+      <workItem from="1746844265047" duration="448000" />
+      <workItem from="1748243884261" duration="9866000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />

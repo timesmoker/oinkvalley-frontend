@@ -4,7 +4,7 @@ export type PostDetail = {
     id: number;
     title: string;
     content: JSONContent;
-    authorName: string;
+    username: string;
     createdAt: string;
     updatedAt: string;
 

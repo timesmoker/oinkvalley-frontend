@@ -2,7 +2,7 @@
 export type PostEntries = {
     id: number;
     title: string;
-    authorName: string;
+    username: string;
     createdAt: string;
     commentCount: number;
 };

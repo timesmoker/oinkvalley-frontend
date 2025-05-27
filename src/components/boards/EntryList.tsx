@@ -58,7 +58,7 @@ export default function EntryList({
                             {entry.title} [{entry.commentCount}]
                         </Link>
                         <div className="flex items-center gap-4 ml-4">
-                            <div className="w-24 text-center truncate">{entry.authorName}</div>
+                            <div className="w-24 text-center truncate">{entry.username}</div>
                             <div className="w-20 text-center text-muted-foreground">{formatDate(entry.createdAt)}</div>
                         </div>
                     </li>
