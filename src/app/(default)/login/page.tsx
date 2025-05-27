@@ -15,29 +15,23 @@ export default function LoginPage() {
     const { login } = useAuthStore();
 
     const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setError('')
+        e.preventDefault();
+        setError('');
 
         try {
-            const res = await apiClient.post('/auth/login', {email, password})
-            const data = res.data
-            const user = {
-                id: data.id,
-                email: data.email,
-                roles: data.roles,
-            }
+            await apiClient.post('/auth/login', { email, password });
 
-            login(data.token, user)
-            router.push('/')
-
+            login();
+            router.push('/');
         } catch (error) {
             if (axios.isAxiosError(error)) {
-                setError(error.response?.data?.error || '로그인 실패')
+                setError(error.response?.data?.error || '로그인 실패');
             } else {
-                setError('알 수 없는 오류가 발생했습니다.')
+                setError('알 수 없는 오류가 발생했습니다.');
             }
         }
-    }
+    };
+
 
     return (
         <div className="max-w-md mx-auto mt-20 p-6 border rounded shadow bg-white">

@@ -22,6 +22,9 @@ import { useEditor, EditorContent } from '@tiptap/react'
 import { useState } from 'react'
 import EditorToolbar from '@/components/boards/ui/Toolbar'
 import clsx from 'clsx'
+import axios from "axios";
+import {useRouter} from "next/navigation";
+
 
 
 export const editorClass = clsx(
@@ -83,7 +86,7 @@ export default function PostEditor({
     onSuccess?: () => void
 })
 {
-
+    const router = useRouter();
     const [title, setTitle] = useState('')
     const [submitting, setSubmitting] = useState(false)
 
@@ -117,18 +120,10 @@ export default function PostEditor({
     })
 
     const handleSave = async () => {
-
         if (!editor || submitting) return;
-        setSubmitting(true)
+        setSubmitting(true);
 
         const json = editor.getJSON();
-        const token = localStorage.getItem('token');
-
-        if (!token) {
-            alert('로그인이 필요합니다.');
-            setSubmitting(false)
-            return;
-        }
 
         try {
             const res = await apiClient.post(`/boards/${boardType}/posts`, {
@@ -137,14 +132,25 @@ export default function PostEditor({
             });
 
             console.log('✅ 저장 완료:', res.data);
-            onSuccess?.()
-        } catch (err) {
+            onSuccess?.();
+            router.push(`/boards/${boardType}?refresh=1`);
+        } catch (err: unknown) {
             console.error('❌ 에러 발생:', err);
-            alert('저장 중 오류 발생');
-        }finally {
-            setSubmitting(false)
+
+            if (axios.isAxiosError(err)) {
+                if (err.response?.status === 401 || err.response?.status === 403) {
+                    alert('로그인이 필요합니다.');
+                } else {
+                    alert('저장 중 오류 발생');
+                }
+            }else {
+                alert('저장 중 오류 발생');
+            }
+        } finally {
+            setSubmitting(false);
         }
     };
+
 
 
 
