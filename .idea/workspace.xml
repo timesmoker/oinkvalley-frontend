@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat: 헤더에 모바일 대응 햄버거 메뉴 추가" />
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat: noindex처리">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +177,7 @@
       <workItem from="1746844265047" duration="448000" />
       <workItem from="1748243884261" duration="9866000" />
       <workItem from="1748401889151" duration="7181000" />
-      <workItem from="1748409088827" duration="10094000" />
+      <workItem from="1748409088827" duration="12023000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -404,7 +411,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748419103270</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: noindex처리">
+      <option name="closed" value="true" />
+      <created>1748419309958</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1748419309958</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="npm ci를 안하면 npm build가 안되겠지요? 그리고 git action 버튼 누르면 해볼수 있는데 그냥 main에 병합하면 안되겠지요?" />
     <MESSAGE value="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다" />
     <MESSAGE value="feat : 게시판 요약 불러오기 기능 추가" />
     <MESSAGE value="chore : CR_PAT로 변경" />
@@ -447,6 +461,7 @@
     <MESSAGE value="feat : robot.txt 추가" />
     <MESSAGE value="feat : 에디터 mui-tiptap으로 변경!!!!" />
     <MESSAGE value="feat: 헤더에 모바일 대응 햄버거 메뉴 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 헤더에 모바일 대응 햄버거 메뉴 추가" />
+    <MESSAGE value="feat: noindex처리" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: noindex처리" />
   </component>
 </project>

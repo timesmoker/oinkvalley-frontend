@@ -29,7 +29,7 @@ export default async function BoardPage({
     const data: PageResponse<PostEntries> = await res.json();
 
     return (
-        <div className="p-6 w-full sm:w-4/5 sm:min-w-[640px] 2xl:w-[950px] mx-auto">
+        <div className="w-full px-0 py-6 sm:px-6 sm:max-w-[950px] sm:mx-auto">
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
             <EntryList
