@@ -1,150 +1,76 @@
 'use client'
 
+import { useRef, useState } from 'react'
+import {Box, Button, Stack,} from '@mui/material'
+import { useRouter } from 'next/navigation'
+import {
+    LinkBubbleMenu,
+    MenuButton,
+    RichTextEditor,
+    TableBubbleMenu,
+    type RichTextEditorRef,
+} from "mui-tiptap";
+import Lock from "@mui/icons-material/Lock";
+import LockOpen from "@mui/icons-material/LockOpen";
+import TextFields from "@mui/icons-material/TextFields";
 import apiClient from '@/lib/api/apiClient'
-import StarterKit from '@tiptap/starter-kit'
-import Underline from '@tiptap/extension-underline'
-import Image from '@tiptap/extension-image'
-import Link from '@tiptap/extension-link'
-import Heading from '@tiptap/extension-heading'
-
-import TextStyle from '@tiptap/extension-text-style'
-import Color from '@tiptap/extension-color'
-import TaskList from '@tiptap/extension-task-list'
-import TaskItem from '@tiptap/extension-task-item'
-import HorizontalRule from '@tiptap/extension-horizontal-rule'
-
-import Table from '@tiptap/extension-table'
-import TableRow from '@tiptap/extension-table-row'
-import TableCell from '@tiptap/extension-table-cell'
-import TableHeader from '@tiptap/extension-table-header'
-import {Placeholder} from "@tiptap/extension-placeholder";
-import { useEditor, EditorContent } from '@tiptap/react'
-import { useState } from 'react'
-import EditorToolbar from '@/components/boards/ui/Toolbar'
-import clsx from 'clsx'
-import axios from "axios";
-import {useRouter} from "next/navigation";
-
-
-
-export const editorClass = clsx(
-    'prose',
-    'max-w-none',
-    'border',
-    'p-6',
-    'rounded',
-    'bg-white',
-    'relative',
-    'cursor-text',
-    'min-h-[500px]',
-    'focus:outline-none',
-
-    // placeholder 스타일
-    '[&_.is-empty]:text-gray-400',
-    '[&_.is-empty]:before:content-[attr(data-placeholder)]',
-    '[&_.is-empty]:before:float-left',
-    '[&_.is-empty]:before:text-gray-400',
-    '[&_.is-empty]:before:pointer-events-none',
-    '[&_.is-empty]:before:h-0',
-
-    // 콘텐츠 wrapper 높이 확보
-    '[&>div]:min-h-[400px]',
-
-    // 표 스타일 - 너비 제한 + 가운데 정렬 + table-layout 고정
-    '[&_table]:mx-auto',
-    '[&_table]:w-[700px]',
-    '[&_table]:min-w-[400px]',
-    '[&_table]:max-w-full',
-    '[&_table]:table-fixed',
-
-    // 셀 스타일 - 줄바꿈 + 정렬 + 기본 너비
-    '[&_th]:border',
-    '[&_td]:border',
-    '[&_td]:px-2',
-    '[&_td]:py-1',
-    '[&_td]:break-words',
-    '[&_td]:align-top',
-    '[&_td]:min-w-[100px]',
-
-    // 문단/헤딩 등 기본 블록 스타일
-    '[&_p]:my-2',
-    '[&_p]:text-base',
-    '[&_h1]:my-6',
-    '[&_h2]:my-5',
-    '[&_ul]:my-4',
-    '[&_ol]:my-4',
-    '[&_blockquote]:my-4',
-    '[&_pre]:my-4',
-)
+import axios from 'axios'
+import EditorMenuControls from "./EditorMenuControls";
+import useExtensions from "./useExtensions";
 
 
 export default function PostEditor({
                                        boardType,
-                                       onSuccess
-                                    }:{
+                                       disableStickyMenuBar,
+                                       onSuccess,
+                                   }: {
     boardType: string
+    disableStickyMenuBar?: boolean
     onSuccess?: () => void
-})
-{
-    const router = useRouter();
+
+}) {
+    const [isEditable, setIsEditable] = useState(true);
+    const [showMenuBar, setShowMenuBar] = useState(true);
+
+    const router = useRouter()
     const [title, setTitle] = useState('')
     const [submitting, setSubmitting] = useState(false)
+    const rteRef = useRef<RichTextEditorRef>(null);
+    const extensions = useExtensions({
+        placeholder: "Add your own content here...",
+    });
+    const isStickyDisabled = disableStickyMenuBar ?? false
 
-    const editor = useEditor({
-        extensions: [
-            StarterKit.configure({
-            }),
-            Underline,
-            Image,
-            Link.configure({ openOnClick: false }),
-            Heading.configure({ levels: [1, 2] }),
 
-            TextStyle,
-            Color,
-            TaskList,
-            TaskItem.configure({ nested: true }),
-            HorizontalRule,
-
-            Table.configure({
-                resizable: true,
-            }),
-            TableRow,
-            TableHeader,
-            TableCell,
-            Placeholder.configure({
-                placeholder: '오잉크 밸리 에디터 테스트 중, 표 안됨! 피드백 환영!',
-                showOnlyCurrent: false,
-            }),
-        ],
-        content: '',
-    })
 
     const handleSave = async () => {
+        const editor = rteRef.current?.editor;
         if (!editor || submitting) return;
+
         setSubmitting(true);
 
-        const json = editor.getJSON();
+        const content = editor.getJSON(); // 💾 에디터 상태 JSON 그대로 저장
 
         try {
             const res = await apiClient.post(`/boards/${boardType}/posts`, {
                 title,
-                content: json,
+                content,
             });
 
-            console.log('✅ 저장 완료:', res.data);
+            console.log("✅ 저장 완료:", res.data);
             onSuccess?.();
             router.push(`/boards/${boardType}?refresh=1`);
-        } catch (err: unknown) {
-            console.error('❌ 에러 발생:', err);
-
+        } catch (err) {
+            console.error("❌ 에러 발생:", err);
             if (axios.isAxiosError(err)) {
-                if (err.response?.status === 401 || err.response?.status === 403) {
-                    alert('로그인이 필요합니다.');
+                const status = err.response?.status;
+                if (status === 401 || status === 403) {
+                    alert("로그인이 필요합니다.");
                 } else {
-                    alert('저장 중 오류 발생');
+                    alert("저장 중 오류 발생");
                 }
-            }else {
-                alert('저장 중 오류 발생');
+            } else {
+                alert("저장 중 오류 발생");
             }
         } finally {
             setSubmitting(false);
@@ -152,52 +78,113 @@ export default function PostEditor({
     };
 
 
-
-
-
-
     return (
-        <div className="flex flex-col gap-4">
-            {/* 제목 입력 */}
-            <input
-                className="text-2xl font-bold border-b p-2 outline-none"
-                placeholder="제목을 입력하세요"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
+        <>
+            <Box
+                sx={{
+                    minHeight: '60%',
+                    "& .ProseMirror": {
+                        minHeight: '50vh',
+                        padding: '1rem',
+                        overflowWrap: 'break-word',
+                        wordBreak: 'break-word',
 
-            {/* 툴바 */}
-            <EditorToolbar editor={editor} />
-            {/* 에디터 */}
-            <EditorContent editor={editor} className={editorClass} />
+                        "& ol, & ul": {
+                            paddingLeft: '1.5rem', // 들여쓰기
+                            marginLeft: 0,
+                        },
 
+                        "& h1, & h2, & h3, & h4, & h5, & h6": {
+                            scrollMarginTop: showMenuBar ? 50 : 0,
+                        },
+                    },
+                }}
+            >
+                <input
+                    className="text-2xl font-bold border-b p-2 outline-none"
+                    placeholder="제목을 입력하세요"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
 
-            {/* 저장 및 미리보기 */}
-            <div className="flex gap-2 justify-end">
-                <button
-                    className="px-4 py-2 border rounded bg-gray-100"
-                    onClick={handleSave}
-                    disabled={submitting}
+                <RichTextEditor
+                    ref={rteRef}
+                    extensions={extensions}
+                    editable={isEditable}
+                    editorProps={{}}
+                    renderControls={() => <EditorMenuControls />}
+                    RichTextFieldProps={{
+                        // The "outlined" variant is the default (shown here only as
+                        // example), but can be changed to "standard" to remove the outlined
+                        // field border from the editor
+                        variant: "outlined",
+                        MenuBarProps: {
+                            hide: !showMenuBar,
+                            disableSticky: isStickyDisabled,
+                        },
+
+                        // Below is an example of adding a toggle within the outlined field
+                        // for showing/hiding the editor menu bar, and a "submit" button for
+                        // saving/viewing the HTML content
+                        footer: (
+                            <Stack
+                                direction="row"
+                                spacing={2}
+                                sx={{
+                                    borderTopStyle: "solid",
+                                    borderTopWidth: 1,
+                                    py: 1,
+                                    px: 1.5,
+                                }}
+                            >
+                                <MenuButton
+                                    value="formatting"
+                                    tooltipLabel={
+                                        showMenuBar ? "Hide formatting" : "Show formatting"
+                                    }
+                                    size="small"
+                                    onClick={() => {
+                                        setShowMenuBar((currentState) => !currentState);
+                                    }}
+                                    selected={showMenuBar}
+                                    IconComponent={TextFields}
+                                />
+
+                                <MenuButton
+                                    value="formatting"
+                                    tooltipLabel={
+                                        isEditable
+                                            ? "Prevent edits (use read-only mode)"
+                                            : "Allow edits"
+                                    }
+                                    size="small"
+                                    onClick={() => {
+                                        setIsEditable((currentState) => !currentState);
+                                    }}
+                                    selected={!isEditable}
+                                    IconComponent={isEditable ? Lock : LockOpen}
+                                />
+
+                                <Button
+                                    variant="contained"
+                                    size="small"
+                                    onClick={handleSave} disabled={submitting}
+                                >
+                                    Save
+                                </Button>
+                            </Stack>
+                        ),
+                    }}
                 >
-                    💾 저장
-                </button>
-            </div>
-
-            <style jsx>{`
-                .btn {
-                    padding: 4px 8px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 0.875rem;
-                    background: white;
-                    cursor: pointer;
-                }
-
-                .btn:hover {
-                    background: #f0f0f0;
-                }
-            `}</style>
-        </div>
+                    {() => (
+                        <>
+                            <LinkBubbleMenu />
+                            <TableBubbleMenu />
+                        </>
+                    )}
+                </RichTextEditor>
+            </Box>
+        </>
     )
 }
 

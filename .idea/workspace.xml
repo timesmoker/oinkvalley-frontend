@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="fix : entries-&gt; posts로 매개변수명 제대로 입력..">
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat : robot.txt 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/zzang/zzang-card.webp" beforeDir="false" afterPath="$PROJECT_DIR$/public/zzang/zzang-card.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/boards/CommentEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/CommentEditor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/CommentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/CommentList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/boards/PostEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/PostEditor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/api/apiClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/api/apiClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/useAuthStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board/postComment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/postComment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board/postEntries.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/postEntries.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board/posts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/board/posts.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/Viewer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,50 +68,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.46&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/src/app/(default)/board&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "git-widget-placeholder": "develop",
+    "javascript.nodejs.core.library.configured.version": "20.19.0",
+    "javascript.nodejs.core.library.typings.version": "20.17.46",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node",
+    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/boards/ui" />
+      <recent name="$PROJECT_DIR$/src/lib" />
+      <recent name="$PROJECT_DIR$/public/zzang" />
       <recent name="$PROJECT_DIR$/src/app/(default)/board" />
       <recent name="$PROJECT_DIR$/src/data/board" />
-      <recent name="$PROJECT_DIR$/public/oinkvalley" />
-      <recent name="$PROJECT_DIR$/src/app/zzang" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/types/board" />
       <recent name="$PROJECT_DIR$/src/components/boards" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/lib/mui-tiptap" />
+      <recent name="$PROJECT_DIR$/src/types/board" />
       <recent name="$PROJECT_DIR$/src/data/board" />
-      <recent name="$PROJECT_DIR$/src/app/(default)/board/[board]" />
-      <recent name="$PROJECT_DIR$/src/app/(default)" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -183,6 +182,8 @@
       <workItem from="1746770936012" duration="20708000" />
       <workItem from="1746844265047" duration="448000" />
       <workItem from="1748243884261" duration="9866000" />
+      <workItem from="1748401889151" duration="7181000" />
+      <workItem from="1748409088827" duration="9790000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -418,10 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="dockerignore설정" />
-    <MESSAGE value="서버에 마지막에 남는 토큰 정보 삭제" />
-    <MESSAGE value="buildx &amp; QEMU세팅" />
-    <MESSAGE value="게시판 생성" />
     <MESSAGE value="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음" />
     <MESSAGE value="오타 수정" />
     <MESSAGE value="npm ci를 안하면 npm build가 안되겠지요? 그리고 git action 버튼 누르면 해볼수 있는데 그냥 main에 병합하면 안되겠지요?" />
@@ -443,6 +440,10 @@
     <MESSAGE value="refactoring : WriteEditor -&gt; PostEditor [boards], feat : onSuccess추가, 중복 요청 방지 위해 submitting추가" />
     <MESSAGE value="refactor : types/posts.ts -&gt; types/board/posts.ts, Enrty -&gt; PostEntry" />
     <MESSAGE value="fix : entries-&gt; posts로 매개변수명 제대로 입력.." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : entries-&gt; posts로 매개변수명 제대로 입력.." />
+    <MESSAGE value="feat : 토큰저장방식 http only로 변경 / post저장시 뒤로가기" />
+    <MESSAGE value="feat : 토큰저장방식 http only로 변경 / post저장시 뒤로가기" />
+    <MESSAGE value="refactor : authname -&gt; username" />
+    <MESSAGE value="feat : robot.txt 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : robot.txt 추가" />
   </component>
 </project>

@@ -25,7 +25,7 @@ export default async function PostPage({ params }: { params: { boardType: string
 
 
     return (
-        <div className="p-6 w-4/5 mx-auto">
+        <div className="p-6 w-full sm:w-4/5 sm:min-w-[640px] 2xl:w-[950px] mx-auto">
             {/* 게시판 이름 */}
             <h1 className="text-2xl font-bold mb-4">{config.name}</h1>
 
@@ -57,6 +57,7 @@ export default async function PostPage({ params }: { params: { boardType: string
                     <div className="prose min-h-[200px]">
                         <Viewer
                             content={post.content}
+                            proseminHeight="50vh"
                         />
                     </div>
                 </div>
@@ -65,7 +66,7 @@ export default async function PostPage({ params }: { params: { boardType: string
             <div className="flex gap-2 justify-end mt-4">
                 <DeletePostButton boardType={params.boardType} postId={post.id} />
             </div>
-            <div className="w-4/5 mx-auto space-y-6">
+            <div className="w-full mx-auto space-y-6">
                 <Comments boardType={params.boardType} postId={params.postId} />
             </div>
         </div>

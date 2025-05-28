@@ -13,7 +13,7 @@ export default function WritePage({ params }: { params: { boardType: string } })
     if (!config) return notFound();
 
     return (
-        <div className="p-6">
+        <div className="p-6 w-full sm:w-4/5 sm:min-w-[640px] 2xl:w-[950px] mx-auto">
             <h1 className="text-xl font-bold mb-4">글쓰기</h1>
             <PostEditor boardType={params.boardType} />
         </div>
