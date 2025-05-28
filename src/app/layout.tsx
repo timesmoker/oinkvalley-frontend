@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     title: "오잉크 밸리",
     description: "오잉크들의 안식처",
     icons: { icon: "/favicon.ico" },
+    robots: {
+        index: false,
+        follow: false,
+    },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
