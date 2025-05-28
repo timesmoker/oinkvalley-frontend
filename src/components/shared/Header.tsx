@@ -1,13 +1,18 @@
 'use client'
 
+import { useState } from 'react';
 import { useAuthStore } from '@/store/useAuthStore';
 import { Button } from "@/components/shared/ui/Button";
 import Link from "next/link";
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
     const logout = useAuthStore((state) => state.logout);
     const hasHydrated = useAuthStore((state) => state.hasHydrated);
+
+    const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center border-b bg-white/60 backdrop-blur-md fixed top-0 z-50">
@@ -22,7 +27,14 @@ export default function Header() {
                 <Link href="#" className="hover:scale-125 hover:text-black transition">칭찬 스티커</Link>
             </nav>
 
-            <div className="flex gap-2 min-w-[200px] h-9 items-center justify-end">
+            {/* 모바일 메뉴 버튼 */}
+            <div className="md:hidden">
+                <button onClick={toggleMobileMenu} className="p-2">
+                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </button>
+            </div>
+
+            <div className="hidden md:flex gap-2 min-w-[200px] h-9 items-center justify-end">
                 {hasHydrated ? (
                     isLoggedIn ? (
                         <Button
@@ -42,7 +54,6 @@ export default function Header() {
                                     Sign in
                                 </Button>
                             </Link>
-
                             <Link href="/signup">
                                 <Button
                                     variant="default"
@@ -60,6 +71,26 @@ export default function Header() {
                     </>
                 )}
             </div>
+
+            {/* 모바일 메뉴 */}
+            {mobileMenuOpen && (
+                <div className="absolute top-16 left-0 w-full bg-white border-t flex flex-col gap-4 px-6 py-4 z-40 text-gray-800 text-sm">
+                    <Link href="#" onClick={toggleMobileMenu}>달력</Link>
+                    <Link href="/boards/office-of-architect" onClick={toggleMobileMenu}>건축 사무소</Link>
+                    <Link href="#" onClick={toggleMobileMenu}>게시판</Link>
+                    <Link href="#" onClick={toggleMobileMenu}>칭찬 스티커</Link>
+                    {hasHydrated && (
+                        isLoggedIn ? (
+                            <Button onClick={() => { logout(); toggleMobileMenu(); }} variant="default">로그아웃</Button>
+                        ) : (
+                            <>
+                                <Link href="/login" onClick={toggleMobileMenu}><Button variant="outline">Sign in</Button></Link>
+                                <Link href="/signup" onClick={toggleMobileMenu}><Button variant="default">Sign up</Button></Link>
+                            </>
+                        )
+                    )}
+                </div>
+            )}
         </header>
     );
 }
