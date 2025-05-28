@@ -101,7 +101,7 @@ export default function PostEditor({
                 }}
             >
                 <input
-                    className="text-2xl font-bold border-b p-2 outline-none"
+                    className="text-2xl font-bold border-b p-2 outline-none w-full truncate"
                     placeholder="제목을 입력하세요"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
