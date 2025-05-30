@@ -1,6 +1,5 @@
-// src/app/(default)/boards/page.tsx
-import BoardSelector from "@/components/boards/BoardSelector";
+import { redirect } from 'next/navigation';
 
-export default function BoardsPage() {
-    return <BoardSelector />;
+export default function PortalPage() {
+    redirect('/boards');
 }

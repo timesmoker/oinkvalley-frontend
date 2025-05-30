@@ -4,6 +4,16 @@ export const boardConfigs = {
         name: "📚 오잉크 밸리 건축 사무소",
         color: "blue",
         showTags: true,
+    },
+    "zzang": {
+        name: "장윤지 게시판",
+        color: "blue",
+        showTags: true,
+    },
+    "timesmoker": {
+        name: "김태형 게시판",
+        color: "blue",
+        showTags: true,
     },"bubblepal": {
         name: "나메코 머신 개발 일지",
         color: "blue",
@@ -17,27 +27,7 @@ export const boardConfigs = {
         name: "나메코 게시판",
         color: "blue",
         showTags: true,
-    },
-    "zzang": {
-        name: "장윤지 게시판",
-        color: "blue",
-        showTags: true,
-    },
-    "timesmoker": {
-        name: "김태형 게시판",
-        color: "blue",
-        showTags: true,
-    },
-    notice: {
-        name: "공지사항",
-        color: "red",
-        showTags: false,
-    },
-    qa: {
-        name: "질문과 답변",
-        color: "green",
-        showTags: true,
-    },
+    }
 } as const;
 
 export type BoardKey = keyof typeof boardConfigs;

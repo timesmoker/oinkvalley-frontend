@@ -16,14 +16,17 @@ export default function Header() {
 
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center border-b bg-white/60 backdrop-blur-md fixed top-0 z-50">
-            <Link href="/" className="font-bold text-xl hover:opacity-80 transition">
+            <Link
+                href="/"
+                className="font-bold text-xl hover:opacity-80 transition min-w-[168px]"
+            >
                 🐽 오잉크밸리
             </Link>
 
             <nav className="hidden md:flex justify-end gap-6 text-sm text-gray-600">
                 <Link href="#" className="hover:scale-125 hover:text-black transition">달력</Link>
                 <Link href="/boards/office-of-architect" className="hover:scale-125 hover:text-black transition">건축 사무소</Link>
-                <Link href="#" className="hover:scale-125 hover:text-black transition">게시판</Link>
+                <Link href="/boards" className="hover:scale-125 hover:text-black transition">게시판</Link>
                 <Link href="#" className="hover:scale-125 hover:text-black transition">칭찬 스티커</Link>
             </nav>
 
@@ -77,7 +80,7 @@ export default function Header() {
                 <div className="absolute top-16 left-0 w-full bg-white border-t flex flex-col gap-4 px-6 py-4 z-40 text-gray-800 text-sm">
                     <Link href="#" onClick={toggleMobileMenu}>달력</Link>
                     <Link href="/boards/office-of-architect" onClick={toggleMobileMenu}>건축 사무소</Link>
-                    <Link href="#" onClick={toggleMobileMenu}>게시판</Link>
+                    <Link href="/boards" onClick={toggleMobileMenu}>게시판</Link>
                     <Link href="#" onClick={toggleMobileMenu}>칭찬 스티커</Link>
                     {hasHydrated && (
                         isLoggedIn ? (
