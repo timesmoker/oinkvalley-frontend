@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat: noindex처리">
+      <change afterPath="$PROJECT_DIR$/src/app/(default)/portal/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/boards/BoardSelector.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/[postId]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/[boardType]/write/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/boards/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/boards/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/boards/EntryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/zzang/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/zzang/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/zzang/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/zzang/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/boards/boardConfigs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/boardConfigs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/board/BoardProps.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -101,11 +103,11 @@
       <recent name="$PROJECT_DIR$/src/data/board" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(default)" />
+      <recent name="$PROJECT_DIR$/src/app/(zzang)" />
       <recent name="$PROJECT_DIR$/src/components/boards" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/lib/mui-tiptap" />
-      <recent name="$PROJECT_DIR$/src/types/board" />
-      <recent name="$PROJECT_DIR$/src/data/board" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -178,6 +180,7 @@
       <workItem from="1748243884261" duration="9866000" />
       <workItem from="1748401889151" duration="7181000" />
       <workItem from="1748409088827" duration="12023000" />
+      <workItem from="1748579229831" duration="1833000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -430,7 +433,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
