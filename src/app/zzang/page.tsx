@@ -2,17 +2,7 @@ export default function zzang() {
     return (
 
         <div className="relative min-h-screen select-none">
-            <header className="fixed w-[100vw]  text-black p-4 flex items-center ">
-                <nav>
-                    <a href="#" className="px-3 font-bold hover:text-gray-300">Menu</a>
-                    <a href="#" className="px-3 font-bold hover:text-gray-300">About</a>
-                    <a href="#" className="px-3 font-bold hover:text-gray-300">Schedule</a>
-                </nav>
-                <p className=" text-xl absolute left-1/2 -translate-x-1/2 font-bold">
-                    d0.ZZang
-                </p>
 
-            </header>
             {/* 장윤지 메인*/}
             <div className="flex flex-col fixed top-[25vh] left-[50vw] -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[30vh]  text-black p-8 items-center ">
                 <p className="text-6xl font-bold ">⚾</p>

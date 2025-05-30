@@ -25,11 +25,21 @@ export const metadata: Metadata = {
 
 export default function ZzangLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="ko">
-        <body className="flex flex-col min-h-screen antialiased">
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        </body>
-        </html>
-    )
+        <div className="flex flex-col min-h-screen antialiased">
+            <header className="fixed w-full bg-white z-10 text-black p-4 flex items-center">
+                <nav>
+                    <a href="#" className="px-3 font-bold hover:text-gray-300">Menu</a>
+                    <a href="#" className="px-3 font-bold hover:text-gray-300">About</a>
+                    <a href="#" className="px-3 font-bold hover:text-gray-300">Schedule</a>
+                </nav>
+                <p className="text-xl absolute left-1/2 -translate-x-1/2 font-bold">
+                    d0.ZZang
+                </p>
+            </header>
+
+            <main className="flex-grow pt-[70px]">
+                {children}
+            </main>
+        </div>
+    );
 }

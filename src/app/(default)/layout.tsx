@@ -6,7 +6,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
     return (
         <>
             <Header />
-        <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-20 px-0 sm:px-6">{children}</main>
             <Footer />
             </>
     )
