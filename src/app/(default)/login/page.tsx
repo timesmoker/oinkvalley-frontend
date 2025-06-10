@@ -3,7 +3,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import {useAuthStore} from "@/store/useAuthStore";
+import {useAuthStore} from "@/features/auth/store/useAuthStore";
 import apiClient from '@/lib/api/apiClient'
 import axios from "axios";
 

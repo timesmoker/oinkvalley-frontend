@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState } from "react"
-import { PostComment } from "@/types/board/postComment"
+import { PostComment } from "@/features/boards/types/postComment"
 import { PageResponse } from "@/types/pagination"
 import apiClient from "@/lib/api/apiClient"
-import Viewer from '@/components/boards/Viewer'
+import Viewer from '@/features/boards/components/Viewer'
 
 export default function CommentList({
                                         boardType,

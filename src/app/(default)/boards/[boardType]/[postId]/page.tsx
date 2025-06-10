@@ -1,13 +1,13 @@
 // src/app/board/[boardType]/[postId]/page.tsx
 
 import { notFound } from "next/navigation";
-import {boardConfigs} from "@/data/boards/boardConfigs";
-import {PostDetail} from "@/types/board/posts";
+import {boardConfigs} from "@/features/boards/data/boardConfigs";
+import {PostDetail} from "@/features/boards/types/posts";
 import dynamic from "next/dynamic";
-import DeletePostButton from "@/components/boards/ui/DeletePostButton";
+import DeletePostButton from "@/features/boards/components/ui/DeletePostButton";
 
-const Viewer = dynamic(() => import('@/components/boards/Viewer'), { ssr: false });
-const Comments = dynamic(() => import('@/components/boards/Comments'), { ssr: false })
+const Viewer = dynamic(() => import('@/features/boards/components/Viewer'), { ssr: false });
+const Comments = dynamic(() => import('@/features/boards/components/Comments'), { ssr: false })
 
 
 export default async function PostPage({ params }: { params: { boardType: string; postId: string } }) {

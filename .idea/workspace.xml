@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="feat: noindex처리">
-      <change afterPath="$PROJECT_DIR$/src/app/(default)/portal/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/boards/BoardSelector.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(default)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/zzang/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/zzang/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/zzang/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/zzang/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/boards/boardConfigs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/boards/boardConfigs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/board/BoardProps.ts" beforeDir="false" />
-    </list>
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -44,6 +35,16 @@
     &quot;assignee&quot;: &quot;timesmoker&quot;
   }
 }</component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
+        <option name="rewordedMessage" value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="11cf875149364e968c1a3e394597459fbb5c4b65" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;git@github.com:timesmoker/oinkvalley-frontend.git&quot;,
@@ -78,7 +79,7 @@
     "javascript.nodejs.core.library.typings.version": "20.17.46",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/home/timesmoker/workspace/oinkvalley-frontend",
+    "last_opened_file_path": "/home/timesmoker/workspace/mui-tiptap",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -103,11 +104,11 @@
       <recent name="$PROJECT_DIR$/src/data/board" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/(default)/boards" />
       <recent name="$PROJECT_DIR$/src/app/(default)" />
       <recent name="$PROJECT_DIR$/src/app/(zzang)" />
       <recent name="$PROJECT_DIR$/src/components/boards" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/lib/mui-tiptap" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -422,7 +423,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748419309958</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정">
+      <option name="closed" value="true" />
+      <created>1748583931955</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1748583931955</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정">
+      <option name="closed" value="true" />
+      <created>1748583949640</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1748583949640</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,9 +469,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="왜 안될까 git action이 왜 안되는지는 푸시를 해야  알 수 있다는 슬픈 사실이 있다" />
-    <MESSAGE value="feat : 게시판 요약 불러오기 기능 추가" />
-    <MESSAGE value="chore : CR_PAT로 변경" />
     <MESSAGE value="fix : 라우팅 경로 수정" />
     <MESSAGE value="refactor : board-&gt;boards로 통일" />
     <MESSAGE value="feat : 뷰어 기능 추가" />
@@ -477,6 +491,9 @@
     <MESSAGE value="feat : 에디터 mui-tiptap으로 변경!!!!" />
     <MESSAGE value="feat: 헤더에 모바일 대응 햄버거 메뉴 추가" />
     <MESSAGE value="feat: noindex처리" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: noindex처리" />
+    <MESSAGE value="feat : 게시판 선택 페이지 추가" />
+    <MESSAGE value="refactor : 레이아웃 리팩터링" />
+    <MESSAGE value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
   </component>
 </project>

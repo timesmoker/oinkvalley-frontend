@@ -1,7 +1,7 @@
 //src/app/page.tsx
 import React from "react";
-import HeroSection from "@/components/shared/ui/HeroSection";
-import CardSection from "@/components/shared/ui/CardSection";
+import HeroSection from "@/components/ui/HeroSection";
+import CardSection from "@/components/ui/CardSection";
 
 export default function HomePage() {
     return (

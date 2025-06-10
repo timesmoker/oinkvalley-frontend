@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FileText } from "lucide-react";
-import { PostEntries } from "@/types/board/postEntries";
+import { PostEntries } from "@/features/boards/types/postEntries";
 
 function formatDate(dateStr: string) {
     const date = new Date(dateStr);

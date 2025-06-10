@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Editor } from '@tiptap/react'
-import EditorButton from '@/components/boards/ui/EditorButton'
+import EditorButton from '@/features/boards/components/ui/EditorButton'
 
 
 export default function InsertTableForm({ editor }: { editor: Editor | null }) {

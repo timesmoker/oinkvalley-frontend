@@ -7,7 +7,7 @@ export const profileCards = [
         href: "/timesmoker",
         label: "Timesmoker's Zone",
         center: false,
-        content: null, // ✅ placeholder
+        content: null,
     },
     {
         name: "오잉크 포탈",

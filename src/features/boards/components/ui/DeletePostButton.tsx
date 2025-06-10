@@ -4,7 +4,7 @@
 
 import { useRouter } from 'next/navigation'
 import apiClient from '@/lib/api/apiClient'
-import { Button } from '@/components/shared/ui/Button'
+import { Button } from '@/components/ui/Button'
 
 interface DeletePostButtonProps {
     postId: number

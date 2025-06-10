@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Inter, Fira_Code } from "next/font/google";
 import "@/app/globals.css"
-import Footer from "@/components/shared/Footer";
+import Footer from "@/components/layout/Footer";
 import React from "react";
 
 const inter = Inter({

@@ -1,6 +1,6 @@
 // app/(default)/layout.tsx
-import Header from '@/components/shared/Header'
-import Footer from '@/components/shared/Footer'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
     return (

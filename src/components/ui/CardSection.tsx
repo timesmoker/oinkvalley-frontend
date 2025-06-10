@@ -1,5 +1,5 @@
-import ProfileCard from "@/components/shared/ui/ProfileCard";
-import { profileCards } from "@/data/shared/cards";
+import ProfileCard from "@/components/ui/ProfileCard";
+import { profileCards } from "@/data/cards";
 
 export default function CardSection() {
     return (

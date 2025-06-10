@@ -1,10 +1,10 @@
 // src/app/(default)/boards/[boardType]/page.tsx
 
-import { boardConfigs } from "@/data/boards/boardConfigs";
+import { boardConfigs } from "@/features/boards/data/boardConfigs";
 import { notFound } from "next/navigation";
-import EntryList from "@/components/boards/EntryList";
+import EntryList from "@/features/boards/components/EntryList";
 import Link from "next/link";
-import { PostEntries } from "@/types/board/postEntries";
+import { PostEntries } from "@/features/boards/types/postEntries";
 import { PageResponse } from "@/types/pagination";
 
 export default async function BoardPage({

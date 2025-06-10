@@ -2,7 +2,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { boardConfigs, BoardKey } from "@/data/boards/boardConfigs";
+import { boardConfigs, BoardKey } from "@/features/boards/data/boardConfigs";
 
 export default function BoardSelector() {
     const router = useRouter();

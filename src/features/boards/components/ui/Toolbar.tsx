@@ -1,8 +1,8 @@
 'use client'
 
 import { Editor } from '@tiptap/react'
-import EditorButton from '@/components/boards/ui/EditorButton'
-import TableForm from '@/components/boards/ui/TableForm'
+import EditorButton from '@/features/boards/components/ui/EditorButton'
+import TableForm from '@/features/boards/components/ui/TableForm'
 
 export default function EditorToolbar({ editor }: { editor: Editor | null }) {
     const insertImage = () => {

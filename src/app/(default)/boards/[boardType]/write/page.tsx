@@ -1,9 +1,9 @@
 // src/app/office-of-architect/write/page.tsx
 import dynamic from 'next/dynamic'
-import {boardConfigs} from "@/data/boards/boardConfigs";
+import {boardConfigs} from "@/features/boards/data/boardConfigs";
 import {notFound} from "next/navigation";
 
-const PostEditor = dynamic(() => import('@/components/boards/PostEditor'), {
+const PostEditor = dynamic(() => import('@/features/boards/components/PostEditor'), {
     ssr: false,
 })
 

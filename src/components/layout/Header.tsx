@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { useAuthStore } from '@/store/useAuthStore';
-import { Button } from "@/components/shared/ui/Button";
+import { useAuthStore } from '@/features/auth/store/useAuthStore';
+import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Menu, X } from 'lucide-react';
 
@@ -17,7 +17,7 @@ export default function Header() {
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center border-b bg-white/60 backdrop-blur-md fixed top-0 z-50">
             <Link
-                href="/"
+                href="/public"
                 className="font-bold text-xl hover:opacity-80 transition min-w-[168px]"
             >
                 🐽 오잉크밸리
