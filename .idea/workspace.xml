@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
+    <list default="true" id="949340b5-14c2-4aa6-9bf3-f2d0cf83b0e2" name="Changes" comment="refactor: 도메인 기반 폴더 구조로 리팩토링">
+      <change beforePath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(default)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -65,36 +70,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "develop",
-    "javascript.nodejs.core.library.configured.version": "20.19.0",
-    "javascript.nodejs.core.library.typings.version": "20.17.46",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/home/timesmoker/workspace/mui-tiptap",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node",
-    "nodejs_package_manager_path": "/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "ts.external.directory.path": "/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.19.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.46&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/timesmoker/workspace/mui-tiptap&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;/home/timesmoker/.nvm/versions/node/v20.19.0/bin/npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/timesmoker/workspace/oinkvalley-frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/boards/ui" />
@@ -104,11 +109,11 @@
       <recent name="$PROJECT_DIR$/src/data/board" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/app/(default)/boards" />
+      <recent name="$PROJECT_DIR$/src/features/auth/components" />
+      <recent name="$PROJECT_DIR$/src/features/boards/types" />
+      <recent name="$PROJECT_DIR$/src/features/auth" />
+      <recent name="$PROJECT_DIR$/src/data" />
       <recent name="$PROJECT_DIR$/src/app/(default)" />
-      <recent name="$PROJECT_DIR$/src/app/(zzang)" />
-      <recent name="$PROJECT_DIR$/src/components/boards" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -129,7 +134,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
       </set>
     </attachedChunks>
   </component>
@@ -182,6 +187,7 @@
       <workItem from="1748401889151" duration="7181000" />
       <workItem from="1748409088827" duration="12023000" />
       <workItem from="1748579229831" duration="1833000" />
+      <workItem from="1749527029175" duration="11496000" />
     </task>
     <task id="LOCAL-00005" summary="야 챗지피티 내가 분명 buildx로 줬잖아 이자식아 하여간 고쳤음">
       <option name="closed" value="true" />
@@ -439,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748583949640</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor: 도메인 기반 폴더 구조로 리팩토링">
+      <option name="closed" value="true" />
+      <created>1749532792490</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1749532792490</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix : 라우팅 경로 수정" />
     <MESSAGE value="refactor : board-&gt;boards로 통일" />
     <MESSAGE value="feat : 뷰어 기능 추가" />
     <MESSAGE value="fix : 누락된 파일 추가" />
@@ -494,6 +507,7 @@
     <MESSAGE value="feat : 게시판 선택 페이지 추가" />
     <MESSAGE value="refactor : 레이아웃 리팩터링" />
     <MESSAGE value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: portal 관련 기능을 boards로 통합, /portal → /boards 리다이렉트 및 헤더 링크 수정" />
+    <MESSAGE value="refactor: 도메인 기반 폴더 구조로 리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 도메인 기반 폴더 구조로 리팩토링" />
   </component>
 </project>
