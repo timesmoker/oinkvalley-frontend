@@ -1,43 +1,23 @@
-//src/app/(default)/login/page.tsx
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import {useAuthStore} from "@/features/auth/store/useAuthStore";
-import apiClient from '@/lib/api/apiClient'
-import axios from "axios";
+import React, { useState } from 'react';
+import { useLogin } from '@/features/auth/hooks/useLogin';
 
 export default function LoginPage() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
-    const router = useRouter()
-    const { login } = useAuthStore();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { handleLogin, error } = useLogin();
 
-    const handleLogin = async (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError('');
-
-        try {
-            await apiClient.post('/auth/login', { email, password });
-
-            login();
-            router.push('/');
-        } catch (error) {
-            if (axios.isAxiosError(error)) {
-                setError(error.response?.data?.error || '로그인 실패');
-            } else {
-                setError('알 수 없는 오류가 발생했습니다.');
-            }
-        }
+        await handleLogin(email, password);
     };
-
 
     return (
         <div className="max-w-md mx-auto mt-20 p-6 border rounded shadow bg-white">
             <h2 className="text-2xl font-bold mb-6 text-center">로그인</h2>
 
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form onSubmit={onSubmit} className="space-y-4">
                 <div>
                     <label className="block text-sm font-medium">이메일</label>
                     <input
@@ -70,5 +50,5 @@ export default function LoginPage() {
                 </button>
             </form>
         </div>
-    )
+    );
 }

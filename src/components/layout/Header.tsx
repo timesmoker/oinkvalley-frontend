@@ -5,19 +5,20 @@ import { useAuthStore } from '@/features/auth/store/useAuthStore';
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { Menu, X } from 'lucide-react';
+import { useLogout } from '@/features/auth/hooks/useLogout';
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
-    const logout = useAuthStore((state) => state.logout);
     const hasHydrated = useAuthStore((state) => state.hasHydrated);
+    const { logout } = useLogout();
 
     const toggleMobileMenu = () => setMobileMenuOpen((prev) => !prev);
 
     return (
         <header className="w-full px-6 py-4 flex justify-between items-center border-b bg-white/60 backdrop-blur-md fixed top-0 z-50">
             <Link
-                href="/public"
+                href="/"
                 className="font-bold text-xl hover:opacity-80 transition min-w-[168px]"
             >
                 🐽 오잉크밸리
@@ -84,7 +85,9 @@ export default function Header() {
                     <Link href="#" onClick={toggleMobileMenu}>칭찬 스티커</Link>
                     {hasHydrated && (
                         isLoggedIn ? (
-                            <Button onClick={() => { logout(); toggleMobileMenu(); }} variant="default">로그아웃</Button>
+                            <Button
+                                onClick={logout} >
+                                로그아웃</Button>
                         ) : (
                             <>
                                 <Link href="/login" onClick={toggleMobileMenu}><Button variant="outline">Sign in</Button></Link>
