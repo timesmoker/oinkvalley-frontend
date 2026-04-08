@@ -24,7 +24,11 @@ export default async function BoardPage({
     const baseUrl = getServerApiBaseUrl(Backend_URL);
     const cookie = getForwardedCookieHeader();
 
-    const res = await fetch(`${baseUrl}/boards/...`, {
+    const url = new URL(`${baseUrl}/boards/${params.boardType}/posts`);
+    url.searchParams.set("page", String(page));
+    url.searchParams.set("size", "20");
+
+    const res = await fetch(url, {
         cache: "no-store",
         headers: cookie ? { cookie } : undefined,
     });
