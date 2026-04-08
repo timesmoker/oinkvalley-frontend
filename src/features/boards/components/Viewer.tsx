@@ -10,7 +10,7 @@ import useExtensions from "./useExtensions"
 
 export default function Viewer({
                                    content,
-                                   proseminHeight, // ← 기본값은 유지하되, 외부에서 조절 가능
+                                   proseminHeight,
                                }: {
     content: JSONContent
     proseminHeight?: string }) {
@@ -19,15 +19,22 @@ export default function Viewer({
     return (
         <Box
             sx={{
-                minHeight: '5vh',
+                height: '100%',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+
                 "& .ProseMirror": {
+                    flex: 1,
+                    height: '100%',
+                    width: '100%',
                     ...(proseminHeight ? { minHeight: proseminHeight } : {}),
                     padding: '1rem',
                     overflowWrap: 'break-word',
                     wordBreak: 'break-word',
 
                     "& ol, & ul": {
-                        paddingLeft: '1.5rem', // 들여쓰기
+                        paddingLeft: '1.5rem',
                         marginLeft: 0,
                     },
 
@@ -37,11 +44,12 @@ export default function Viewer({
                 },
             }}
         >
-        <RichTextReadOnly
-            content={content}
-            extensions={extensions}
-        />
+            <RichTextReadOnly
+                content={content}
+                extensions={extensions}
+            />
         </Box>
+
     )
 }
 
