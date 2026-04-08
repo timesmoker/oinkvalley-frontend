@@ -5,7 +5,7 @@ import {boardConfigs} from "@/features/boards/data/boardConfigs";
 import {PostDetail} from "@/features/boards/types/posts";
 import dynamic from "next/dynamic";
 import DeletePostButton from "@/features/boards/components/ui/DeletePostButton";
-import { headers } from "next/headers";
+import { getForwardedCookieHeader, getServerApiBaseUrl } from "@/lib/api/serverBaseUrl";
 
 const Viewer = dynamic(() => import('@/features/boards/components/Viewer'), { ssr: false });
 const Comments = dynamic(() => import('@/features/boards/components/Comments'), { ssr: false })
@@ -16,9 +16,11 @@ export default async function PostPage({ params }: { params: { boardType: string
     if (!config) return notFound()
 
 
-    const Backend_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
-    const cookie = (await headers()).get("cookie") ?? "";
-    const postRes = await fetch(`${Backend_URL}/boards/${params.boardType}/posts/${params.postId}`, {
+    const Backend_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+    const baseUrl = getServerApiBaseUrl(Backend_URL);
+    const cookie = getForwardedCookieHeader();
+
+    const postRes = await fetch(`${baseUrl}/boards/${params.boardType}/posts/${params.postId}`, {
         cache: "no-store",
         headers: cookie ? { cookie } : undefined,
     });
