@@ -6,7 +6,7 @@ import EntryList from "@/features/boards/components/EntryList";
 import Link from "next/link";
 import { PostEntries } from "@/features/boards/types/postEntries";
 import { PageResponse } from "@/types/pagination";
-import { headers } from "next/headers";
+import { getForwardedCookieHeader, getServerApiBaseUrl } from "@/lib/api/serverBaseUrl";
 
 export default async function BoardPage({
                                             params,
@@ -20,9 +20,11 @@ export default async function BoardPage({
 
     const page = parseInt(searchParams.page || '0', 10);
 
-    const Backend_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
-    const cookie = (await headers()).get("cookie") ?? "";
-    const res = await fetch(`${Backend_URL}/boards/...`, {
+    const Backend_URL = process.env.NEXT_PUBLIC_API_URL || "/api";
+    const baseUrl = getServerApiBaseUrl(Backend_URL);
+    const cookie = getForwardedCookieHeader();
+
+    const res = await fetch(`${baseUrl}/boards/...`, {
         cache: "no-store",
         headers: cookie ? { cookie } : undefined,
     });

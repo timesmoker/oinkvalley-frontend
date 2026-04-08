@@ -25,3 +25,5 @@ yarn-error.log*
 *storybook.log
 .idea/workspace.xml
 .idea/webServers.xml
+.idea/webServers.xml
+.idea/workspace.xml
