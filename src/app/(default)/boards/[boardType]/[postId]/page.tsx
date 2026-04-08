@@ -5,6 +5,7 @@ import {boardConfigs} from "@/features/boards/data/boardConfigs";
 import {PostDetail} from "@/features/boards/types/posts";
 import dynamic from "next/dynamic";
 import DeletePostButton from "@/features/boards/components/ui/DeletePostButton";
+import { headers } from "next/headers";
 
 const Viewer = dynamic(() => import('@/features/boards/components/Viewer'), { ssr: false });
 const Comments = dynamic(() => import('@/features/boards/components/Comments'), { ssr: false })
@@ -14,10 +15,13 @@ export default async function PostPage({ params }: { params: { boardType: string
     const config = boardConfigs[params.boardType as keyof typeof boardConfigs]
     if (!config) return notFound()
 
-    const postRes = await fetch(
-        `http://nginx/api/boards/${params.boardType}/posts/${params.postId}`,
-        { cache: 'no-store' }
-    )
+
+    const Backend_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
+    const cookie = (await headers()).get("cookie") ?? "";
+    const postRes = await fetch(`${Backend_URL}/boards/${params.boardType}/posts/${params.postId}`, {
+        cache: "no-store",
+        headers: cookie ? { cookie } : undefined,
+    });
 
     if (!postRes.ok) return notFound()
 

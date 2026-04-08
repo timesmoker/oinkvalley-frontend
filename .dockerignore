@@ -9,7 +9,7 @@ out/
 
 # 환경 설정 파일
 .env
-.env.*
+.env.local
 
 # 로그 파일
 *.log
